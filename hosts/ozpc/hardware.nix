@@ -9,7 +9,7 @@
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
-      timeout = 0;
+      timeout = 5;
     };
     kernelModules = [ "kvm-intel" ];
     kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
@@ -43,7 +43,9 @@
 
   hardware = {
 
-    cpu.intel.updateMicrocode = config.hardware.enableRedistributableFirmware;
+    cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+    enableRedistributableFirmware = true;
 
     nvidia = {
       modesetting.enable = true;
@@ -75,8 +77,8 @@
   };
 
   networking = {
-    hostName = "ozpc";
     networkmanager.enable = true;
+    hostName = "ozpc";
     firewall.enable = false;
   };
 
