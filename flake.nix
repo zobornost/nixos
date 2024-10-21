@@ -45,6 +45,7 @@
               home-manager.users.oz.imports = [
                 ./oz/home.nix
                 ./oz/gnome.nix
+                ./oz/autorandr.nix
               ];
             }
           ];
