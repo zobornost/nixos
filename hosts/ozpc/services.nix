@@ -4,6 +4,8 @@
 
   services = {
 
+    displayManager.defaultSession = "gnome-xorg";
+
     flatpak.enable = true;
     openssh.enable = true;
 
@@ -42,5 +44,4 @@
     };
 
   };
-
 }
