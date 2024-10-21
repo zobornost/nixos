@@ -1,8 +1,12 @@
 { config, lib, pkgs, ... }:
 
 {
-
   environment = {
+
+    sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+    };
+
     systemPackages = with pkgs; [
       autorandr
       bc
@@ -15,8 +19,7 @@
       home-manager
       jdk
       jdk17
-      libei # for deskflow overlay
-      libportal # for desflow overlay
+      linux-firmware
       nvd
       pavucontrol
       plymouth

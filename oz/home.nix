@@ -13,7 +13,6 @@
       coolercontrol.coolercontrol-liqctld
       coolercontrol.coolercontrol-ui-data
       coolercontrol.coolercontrold
-      deskflow
       discord
       eyedropper
       inkscape
@@ -41,13 +40,15 @@
   };
 
   programs = {
+
     bash = {
       enable = true;
       shellAliases = {
         mc = "bash /home/oz/.minecraft/command";
-        switch = "sudo nixos";
+        switch = "sudo nixos-rebuild switch --flake";
       };
     };
+
     chromium = {
       enable = true;
       extensions = [
@@ -55,7 +56,9 @@
         "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
       ];
     };
+
     firefox.enable = true;
+
     git = {
       enable = true;
       extraConfig = {
@@ -66,7 +69,9 @@
       userName = "Oz Browning";
       userEmail = "56755170+ozmodeuz@users.noreply.github.com";
     };
+
     home-manager.enable = true;
+
     micro.enable = true;
   };
 
