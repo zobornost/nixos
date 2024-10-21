@@ -16,9 +16,9 @@
         inherit system;
         config = { allowUnfree = true; };
         overlays = [
-          (import ./overlays/arcmenu.nix)
-          (import ./overlays/displayswitcher.nix)
-          (import ./overlays/mcman.nix)
+          (import ./overlay/arcmenu.nix)
+          (import ./overlay/displayswitcher.nix)
+          (import ./overlay/mcman.nix)
         ];
 
       };
@@ -30,12 +30,12 @@
           specialArgs = { inherit inputs pkgs; };
           modules = [
             { nixpkgs.config.allowUnfree = true; }
-            ./hosts/ozpc/environment.nix
-            ./hosts/ozpc/hardware.nix
-            ./hosts/ozpc/minecraft.nix
-            ./hosts/ozpc/users.nix
-            ./hosts/ozpc/services.nix
-            ./hosts/ozpc/system.nix
+            ./host/ozpc/environment.nix
+            ./host/ozpc/hardware.nix
+            ./host/ozpc/minecraft.nix
+            ./host/ozpc/users.nix
+            ./host/ozpc/services.nix
+            ./host/ozpc/system.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -43,9 +43,9 @@
                 inherit inputs pkgs;
               };
               home-manager.users.oz.imports = [
-                ./oz/home.nix
-                ./oz/gnome.nix
-                ./oz/autorandr.nix
+                ./home/oz/home.nix
+                ./home/oz/gnome.nix
+                ./home/oz/autorandr.nix
               ];
             }
           ];
