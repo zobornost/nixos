@@ -23,7 +23,7 @@
         font-name = "Noto Sans,  10";
         gtk-theme = "Yaru-magenta";
         icon-theme = "Yaru-magenta";
-        scaling-factor = mkUint32 1;
+        scaling-factor = mkUint32 2;
         text-scaling-factor = 1.0;
         toolbar-style = "text";
       };
@@ -158,18 +158,20 @@
     ];
   };
 
-  programs.gnome-shell = {
-    enable = true;
-    extensions = with pkgs; [
-      { package = gnomeExtensions.appindicator; }
-      { package = gnomeExtensions.arcmenu; }
-      { package = gnomeExtensions.dash-to-panel; }
-      { package = gnomeExtensions.display-configuration-switcher; }
-      { package = gnomeExtensions.gsconnect; }
-      { package = gnomeExtensions.media-controls; }
-      { package = gnomeExtensions.tailscale-qs; }
-      { package = gnomeExtensions.user-themes-x; }
-    ];
+  programs = {
+    gnome-shell = {
+      enable = true;
+      extensions = with pkgs; [
+        { package = gnomeExtensions.appindicator; }
+        { package = gnomeExtensions.arcmenu; }
+        { package = gnomeExtensions.dash-to-panel; }
+        { package = gnomeExtensions.display-configuration-switcher; }
+        { package = gnomeExtensions.gsconnect; }
+        { package = gnomeExtensions.media-controls; }
+        { package = gnomeExtensions.tailscale-qs; }
+        { package = gnomeExtensions.user-themes-x; }
+      ];
+    };
   };
 
 }
