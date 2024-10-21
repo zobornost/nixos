@@ -32,6 +32,12 @@
         button-layout = ":minimize,maximize,close";
       };
 
+      "org/gnome/mutter" = {
+        center-new-windows = true;
+        experimental-features = [ "scale-monitor-framebuffer" ];
+        overlay-key = "Super_L";
+      };
+
       "org/gnome/shell" = {
         disable-user-extensions = false;
         disabled-extensions = [ "background-logo@fedorahosted.org" "apps-menu@gnome-shell-extensions.gcampax.github.com" "user-theme@gnome-shell-extensions.gcampax.github.com" "HideItems@fablevi.github.io" "blur-my-shell@aunetx" "appindicatorsupport@rgcjonas.gmail.com" "trayIconsReloaded@selfmade.pl" "status-icons@gnome-shell-extensions.gcampax.github.com" ];
