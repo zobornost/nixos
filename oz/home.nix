@@ -41,13 +41,7 @@
 
   programs = {
 
-    bash = {
-      enable = true;
-      shellAliases = {
-        mc = "bash /home/oz/.minecraft/command";
-        switch = "sudo nixos-rebuild switch --flake";
-      };
-    };
+    bash.enable = true;
 
     chromium = {
       enable = true;
