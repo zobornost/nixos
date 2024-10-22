@@ -4,7 +4,7 @@
 
   services = {
 
-    displayManager.defaultSession = "gnome-xorg";
+    displayManager.defaultSession = "gnome";
 
     flatpak.enable = true;
     openssh.enable = true;
