@@ -33,9 +33,9 @@
             ./host/ozpc/environment.nix
             ./host/ozpc/hardware.nix
             ./host/ozpc/minecraft.nix
+            ./host/ozpc/nix.nix
             ./host/ozpc/users.nix
             ./host/ozpc/services.nix
-            ./host/ozpc/system.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -45,7 +45,6 @@
               home-manager.users.oz.imports = [
                 ./home/oz/home.nix
                 ./home/oz/gnome.nix
-                ./home/oz/autorandr.nix
               ];
             }
           ];
