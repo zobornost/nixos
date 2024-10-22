@@ -12,7 +12,7 @@
       timeout = 5;
     };
     kernelModules = [ "kvm-intel" ];
-    kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
+    kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" "nvidia-drm.modeset=1" "nvidia-drm.fbdev=1" ];
     extraModulePackages = [ ];
   };
 
@@ -49,7 +49,7 @@
 
     nvidia = {
       modesetting.enable = true;
-      powerManagement.enable = true;
+      powerManagement.enable = false;
       powerManagement.finegrained = false;
       open = false;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
