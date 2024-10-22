@@ -23,7 +23,7 @@
         font-name = "Noto Sans,  10";
         gtk-theme = "Yaru-magenta";
         icon-theme = "Yaru-magenta";
-        scaling-factor = mkUint32 2;
+        scaling-factor = mkUint32 1;
         text-scaling-factor = 1.0;
         toolbar-style = "text";
       };
@@ -117,6 +117,12 @@
         window-preview-title-position = "TOP";
       };
 
+      "org/gnome/shell/extensions/display-configuration-switcher" = {
+        configs = ''
+          [('Personal', uint32 2612640683, [(0, 0, 1.5, uint32 0, true, [('DP-1', '3840x2160@59.997', @a{sv} {})]), (2560, 0, 1.25, 0, false, [('HDMI-1', '2560x1440@59.951', {})])], {'layout-mode': <uint32 1>}, [('DP-1', 'DEL', 'DELL G3223Q', '6BX70P3'), ('HDMI-1', 'DEL', 'DELL U2520D', 'H4MM923')]), ('Work', 3974777912, [(0, 0, 1.5, 0, true, [('DP-1', '3840x2160@59.997', {})])], {'layout-mode': <uint32 1>}, [('DP-1', 'DEL', 'DELL G3223Q', '6BX70P3'), ('HDMI-1', 'DEL', 'DELL U2520D', 'H4MM923')])]
+        '';
+      };
+
       "org/gnome/shell/extensions/mediacontrols" = {
         colored-player-icon = true;
         elements-order = [ "ICON" "CONTROLS" "LABEL" ];
@@ -146,6 +152,7 @@
   };
 
   home = {
+
     file = {
       "${config.home.homeDirectory}/.config/gnome-shell/gnome-shell-light.css".source = ./themes/gnome-shell-light.css;
       "${config.home.homeDirectory}/.local/share/backgrounds/trans_wallpaper_1.png".source = ./wallpapers/trans_wallpaper_1.png;
