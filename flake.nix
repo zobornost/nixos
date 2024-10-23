@@ -3,11 +3,12 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-24.05";
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
 
     let
       lib = nixpkgs.lib;
@@ -20,14 +21,18 @@
           (import ./overlay/displayswitcher.nix)
           (import ./overlay/mcman.nix)
         ];
-
+      };
+      unstable-pkgs = import nixpkgs-unstable {
+        inherit system;
+        config = { allowUnfree = true; };
+        overlays = [ ];
       };
     in
     {
       nixosConfigurations = {
         ozpc = lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs pkgs; };
+          specialArgs = { inherit inputs pkgs unstable-pkgs; };
           modules = [
             { nixpkgs.config.allowUnfree = true; }
             ./host/ozpc/environment.nix
@@ -40,7 +45,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.extraSpecialArgs = {
-                inherit inputs pkgs;
+                inherit inputs pkgs unstable-pkgs;
               };
               home-manager.users.oz.imports = [
                 ./home/oz/home.nix
