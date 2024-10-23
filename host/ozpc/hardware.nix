@@ -11,7 +11,7 @@
       efi.canTouchEfiVariables = true;
       timeout = 5;
     };
-    kernelModules = [ "kvm-intel" ];
+    kernelModules = [ "kvm-intel" "coretemp" "nct6775" ];
     kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" "nvidia-drm.modeset=1" "nvidia-drm.fbdev=1" ];
     extraModulePackages = [ ];
   };
@@ -46,6 +46,22 @@
     cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
     enableRedistributableFirmware = true;
+
+    fancontrol = {
+      enable = true;
+      config = ''
+        INTERVAL=10
+        DEVPATH=hwmon2=devices/platform/coretemp.0 hwmon7=devices/platform/nct6775.656
+        DEVNAME=hwmon2=coretemp hwmon7=nct6798
+        FCTEMPS=hwmon7/pwm1=hwmon7/temp1_input hwmon7/pwm2=hwmon2/temp1_input hwmon7/pwm6=hwmon2/temp1_input
+        FCFANS=hwmon7/pwm1=hwmon7/fan1_input hwmon7/pwm2=hwmon7/fan2_input hwmon7/pwm6=hwmon7/fan6_input
+        MINTEMP=hwmon7/pwm1=40 hwmon7/pwm2=40 hwmon6/pwm1=40
+        MAXTEMP=hwmon7/pwm1=70 hwmon7/pwm2=70 hwmon6/pwm1=40
+        MINSTART=hwmon7/pwm1=150 hwmon7/pwm2=150 hwmon7/pwm6=150
+        MINSTOP=hwmon7/pwm1=0 hwmon7/pwm2=0 hwmon7/pwm6=190
+        MINPWM=hwmon7/pwm1=0 hwmon7/pwm2=0 hwmon7/pwm6=190
+      '';
+    };
 
     nvidia = {
       modesetting.enable = true;

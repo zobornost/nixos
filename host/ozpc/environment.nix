@@ -16,6 +16,7 @@
       jdk
       jdk17
       linux-firmware
+      lm_sensors
       nvd
       pavucontrol
       plymouth
