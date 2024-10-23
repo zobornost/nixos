@@ -161,6 +161,7 @@
     packages = with pkgs; [
       dconf2nix
       gnome.gnome-software
+      gnome.gnome-terminal
       gnome-extension-manager
     ];
   };

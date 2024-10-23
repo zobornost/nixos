@@ -1,38 +1,44 @@
-{ config, pkgs, home-manager, ... }:
+{ config, pkgs, unstable-pkgs, home-manager, ... }:
 
 {
 
   home = {
     username = "oz";
     homeDirectory = "/home/oz";
-    packages = with pkgs; [
-      _1password
-      _1password-gui
-      alacritty
-      coolercontrol.coolercontrol-gui
-      coolercontrol.coolercontrol-liqctld
-      coolercontrol.coolercontrol-ui-data
-      coolercontrol.coolercontrold
-      discord
-      eyedropper
-      inkscape
-      mcman
-      microsoft-edge
-      (nerdfonts.override {
-        fonts = [
-          "0xProto"
-        ];
-      })
-      nil
-      nixpkgs-fmt
-      nuclear
-      packwiz
-      pika-backup
-      prismlauncher
-      scribus
-      vscode
-      yaru-theme
-    ];
+    packages =
+      (with pkgs; [
+        _1password
+        _1password-gui
+        blesh
+        coolercontrol.coolercontrol-gui
+        coolercontrol.coolercontrol-liqctld
+        coolercontrol.coolercontrol-ui-data
+        coolercontrol.coolercontrold
+        discord
+        eyedropper
+        inkscape
+        mcman
+        microsoft-edge
+        (nerdfonts.override {
+          fonts = [
+            "0xProto"
+          ];
+        })
+        nil
+        nixpkgs-fmt
+        nuclear
+        packwiz
+        pika-backup
+        prismlauncher
+        rio
+        scribus
+        vscode
+        yaru-theme
+      ])
+      ++
+      (with unstable-pkgs; [
+        waveterm
+      ]);
     sessionVariables = {
       EDITOR = "micro";
     };
@@ -41,7 +47,9 @@
 
   programs = {
 
-    bash.enable = true;
+    bash = {
+      enable = true;
+    };
 
     chromium = {
       enable = true;
