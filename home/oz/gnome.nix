@@ -42,7 +42,7 @@
         disable-user-extensions = false;
         disabled-extensions = [ "background-logo@fedorahosted.org" "apps-menu@gnome-shell-extensions.gcampax.github.com" "user-theme@gnome-shell-extensions.gcampax.github.com" "HideItems@fablevi.github.io" "blur-my-shell@aunetx" "appindicatorsupport@rgcjonas.gmail.com" "trayIconsReloaded@selfmade.pl" "status-icons@gnome-shell-extensions.gcampax.github.com" ];
         enabled-extensions = [ "gsconnect@andyholmes.github.io" "dash-to-panel@jderose9.github.com" "arcmenu@arcmenu.com" "user-theme-x@tuberry.github.io" "mediacontrols@cliffniff.github.com" "arch-update@RaphaelRochet" "display-configuration-switcher@knokelmaat.gitlab.com" "rounded-window-corners@fxgn" "tailscale@joaophi.github.com" "dim-background-windows@stephane-13.github.com" "appindicatorsupport@rgcjonas.gmail.com" "arcmenu@arcmenu.com" "dash-to-panel@jderose9.github.com" "gsconnect@andyholmes.github.io" "mediacontrols@cliffniff.github.com" "tailscale@joaophi.github.com" "user-theme-x@tuberry.github.io" ];
-        favorite-apps = [ "org.gnome.Nautilus.desktop" "chromium-browser.desktop" "microsoft-edge.desktop" "code-url-handler.desktop" "1password.desktop" ];
+        favorite-apps = [ "org.gnome.Nautilus.desktop" "chromium-browser.desktop" "microsoft-edge.desktop" "code.desktop" "1password.desktop" ];
         welcome-dialog-last-shown-version = "46.2";
       };
 
