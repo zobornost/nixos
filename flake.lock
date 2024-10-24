@@ -72,7 +72,26 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
+        "secrets": "secrets",
         "sops-nix": "sops-nix"
+      }
+    },
+    "secrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1729804471,
+        "narHash": "sha256-9k8B/R8uJktT2PuZOCZNo0M/dhRZXT1TZAovjQ3V4Uo=",
+        "ref": "main",
+        "rev": "ef5afbb49c3e952f1a4cf7f45d68821a772e8c1f",
+        "shallow": true,
+        "type": "git",
+        "url": "ssh://git@github.com/ozmodeuz/secrets.git"
+      },
+      "original": {
+        "ref": "main",
+        "shallow": true,
+        "type": "git",
+        "url": "ssh://git@github.com/ozmodeuz/secrets.git"
       }
     },
     "sops-nix": {

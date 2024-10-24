@@ -51,7 +51,6 @@
             ./host/ozpc/sops.nix
             ./host/ozpc/services.nix
             ./host/ozpc/users.nix
-            sops-nix.nixosModules.sops
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
