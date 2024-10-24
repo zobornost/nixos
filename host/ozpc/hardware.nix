@@ -10,7 +10,7 @@
     fancontrol = {
       enable = true;
       config = ''
-        INTERVAL=10
+        INTERVAL=1
         #DEVPATH=/sys/devices/platform/coretemp.0/hwmon/hwmon[[:print:]]*=devices/platform/coretemp.0 /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*=devices/platform/nct6775.656
         #DEVNAME=/sys/devices/platform/coretemp.0/hwmon/hwmon[[:print:]]*=coretemp /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*=nct6798
         FCTEMPS=/sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm1=/sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/temp1_input /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm2=/sys/devices/platform/coretemp.0/hwmon/hwmon[[:print:]]*/temp1_input /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm6=/sys/devices/platform/coretemp.0/hwmon/hwmon[[:print:]]*/temp1_input
@@ -20,6 +20,7 @@
         MINSTART=/sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm1=150 /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm2=150 /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm6=150
         MINSTOP=/sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm1=0 /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm2=0 /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm6=190
         MINPWM=/sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm1=0 /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm2=0 /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm6=190
+        AVERAGE=3
       '';
     };
 
