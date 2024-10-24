@@ -1,11 +1,12 @@
-{ config, pkgs, lib, secrets, ... }:
+{ config, lib, inputs, ... }:
 
 let
-  secretsPath = builtins.toString secrets;
+  secretsPath = builtins.toString inputs.secrets;
 in
 {
-  imports = [ <sops-nix/modules/sops> ];
-
+  imports = [
+    inputs.sops-nix.nixosModules.sops
+  ];
   sops = {
     defaultSopsFile = "${secretsPath}/secrets.yaml";
     age = {
