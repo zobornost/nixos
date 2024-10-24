@@ -6,14 +6,18 @@
       availableKernelModules = [ "vmd" "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "uas" "sd_mod" ];
       kernelModules = [ ];
     };
+    extraModulePackages = [ ];
+    kernelModules = [ "kvm-intel" "coretemp" "nct6775" ];
+    kernelParams = [ "quiet" "splash" "boot.shell_on_fail" "nvidia.NVreg_PreserveVideoMemoryAllocations=1" "nvidia-drm.modeset=1" "nvidia-drm.fbdev=1" ];
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
-      timeout = 5;
+      timeout = 0;
     };
-    kernelModules = [ "kvm-intel" "coretemp" "nct6775" ];
-    kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" "nvidia-drm.modeset=1" "nvidia-drm.fbdev=1" ];
-    extraModulePackages = [ ];
+    plymouth = {
+      enable = true;
+      theme = "breeze";
+    };
   };
 
   console.keyMap = "uk";
@@ -51,15 +55,15 @@
       enable = true;
       config = ''
         INTERVAL=10
-        DEVPATH=hwmon2=devices/platform/coretemp.0 hwmon7=devices/platform/nct6775.656
-        DEVNAME=hwmon2=coretemp hwmon7=nct6798
-        FCTEMPS=hwmon7/pwm1=hwmon7/temp1_input hwmon7/pwm2=hwmon2/temp1_input hwmon7/pwm6=hwmon2/temp1_input
-        FCFANS=hwmon7/pwm1=hwmon7/fan1_input hwmon7/pwm2=hwmon7/fan2_input hwmon7/pwm6=hwmon7/fan6_input
-        MINTEMP=hwmon7/pwm1=40 hwmon7/pwm2=40 hwmon6/pwm1=40
-        MAXTEMP=hwmon7/pwm1=70 hwmon7/pwm2=70 hwmon6/pwm1=40
-        MINSTART=hwmon7/pwm1=150 hwmon7/pwm2=150 hwmon7/pwm6=150
-        MINSTOP=hwmon7/pwm1=0 hwmon7/pwm2=0 hwmon7/pwm6=190
-        MINPWM=hwmon7/pwm1=0 hwmon7/pwm2=0 hwmon7/pwm6=190
+        #DEVPATH=/sys/devices/platform/coretemp.0/hwmon/hwmon[[:print:]]*=devices/platform/coretemp.0 /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*=devices/platform/nct6775.656
+        #DEVNAME=/sys/devices/platform/coretemp.0/hwmon/hwmon[[:print:]]*=coretemp /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*=nct6798
+        FCTEMPS=/sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm1=/sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/temp1_input /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm2=/sys/devices/platform/coretemp.0/hwmon/hwmon[[:print:]]*/temp1_input /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm6=/sys/devices/platform/coretemp.0/hwmon/hwmon[[:print:]]*/temp1_input
+        FCFANS=/sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm1=/sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/fan1_input /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm2=/sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/fan2_input /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm6=/sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/fan6_input
+        MINTEMP=/sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm1=40 /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm2=40 hwmon6/pwm1=40
+        MAXTEMP=/sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm1=70 /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm2=70 hwmon6/pwm1=40
+        MINSTART=/sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm1=150 /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm2=150 /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm6=150
+        MINSTOP=/sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm1=0 /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm2=0 /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm6=190
+        MINPWM=/sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm1=0 /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm2=0 /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm6=190
       '';
     };
 
