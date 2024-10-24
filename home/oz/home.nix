@@ -7,8 +7,7 @@
     homeDirectory = "/home/oz";
     packages =
       (with pkgs; [
-        _1password
-        _1password-gui
+        bitwarden-desktop
         blesh
         coolercontrol.coolercontrol-gui
         coolercontrol.coolercontrol-liqctld
@@ -37,6 +36,8 @@
       ])
       ++
       (with unstable-pkgs; [
+        _1password
+        _1password-gui
         waveterm
       ]);
     sessionVariables = {
@@ -54,7 +55,8 @@
     chromium = {
       enable = true;
       extensions = [
-        "aeblfdkhhhdcdjpifhhbdiojplfjncoa" # 1password
+        #"aeblfdkhhhdcdjpifhhbdiojplfjncoa" # 1password
+        "nngceckbapebfimnlniiiahkandclblb" # bitwarden
         "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
       ];
     };
