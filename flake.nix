@@ -6,11 +6,13 @@
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    secrets.url = "git+ssh://git@github.com/ozmodeuz/secrets.git?shallow=1&ref=main";
+    secrets.flake = false;
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, sops-nixs, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, sops-nix, ... }@inputs:
 
     let
       lib = nixpkgs.lib;
@@ -46,6 +48,7 @@
             ./host/ozpc/nix.nix
             ./host/ozpc/packages.nix
             ./host/ozpc/programs.nix
+            ./host/ozpc/sops.nix
             ./host/ozpc/services.nix
             ./host/ozpc/users.nix
             sops-nix.nixosModules.sops
