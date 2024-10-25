@@ -15,6 +15,9 @@ graph flake {
         "flake.nix" -- "/users/oz/programs.nix";
         "flake.nix" -- "/users/oz/secrets.nix";
         "flake.nix" -- "/users/oz/desktops/gnome.nix";
+        "flake.nix" -- "/common/overlays/mcman.nix";
+        "flake.nix" -- "/common/overlays/displayswitcher.nix";
+        "flake.nix" -- "/common/overlays/arcmenu.nix";
         subgraph cluster_common {
             label="common";
             style="filled";
