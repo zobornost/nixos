@@ -1,0 +1,57 @@
+graph flake {
+    rankdir="LR";
+    node [shape="box", style="filled"];
+    subgraph cluster_flake {
+        style="filled";
+        color="#ffffffff";
+        "flake.nix" [color="#fdd8f4ff"];
+        "flake.nix" -- "/common/nix-settings.nix";
+        "flake.nix" -- "/host/ozpc/configuration.nix";
+        "flake.nix" -- "/host/ozpc/hardware.nix";
+        "flake.nix" -- "/host/ozpc/secrets.nix";
+        "flake.nix" -- "/host/ozpc/services.nix";
+        "flake.nix" -- "/users/oz/home.nix";
+        "flake.nix" -- "/users/oz/packages.nix";
+        "flake.nix" -- "/users/oz/programs.nix";
+        "flake.nix" -- "/users/oz/secrets.nix";
+        "flake.nix" -- "/users/oz/desktops/gnome.nix";
+        subgraph cluster_common {
+            label="common";
+            style="filled";
+            color="#e0f8baff";
+            "/common/nix-settings.nix" [color="#cfeba2ff"];
+            subgraph cluster_common_overlays {
+                label="overlays";
+                style="filled";
+                color="#cfeba2ff";
+                "/common/overlays/mcman.nix" [color="#b6d780ff"];
+                "/common/overlays/displayswitcher.nix" [color="#b6d780ff"];
+                "/common/overlays/arcmenu.nix" [color="#b6d780ff"];
+            }
+        }
+        subgraph cluster_hosts {
+            label="hosts";
+            style="filled";
+            color="#f4cfeeff";
+            "/host/ozpc/services.nix" [color="#e7b0e0ff"];
+            "/host/ozpc/secrets.nix" [color="#e7b0e0ff"];
+            "/host/ozpc/hardware.nix" [color="#e7b0e0ff"];
+            "/host/ozpc/configuration.nix" [color="#e7b0e0ff"];
+        }
+        subgraph cluster_users {
+            label="users";
+            style="filled";
+            color="#caeefbff";
+            "/users/oz/secrets.nix" [color="#a3e0f7ff"];
+            "/users/oz/programs.nix" [color="#a3e0f7ff"];
+            "/users/oz/packages.nix" [color="#a3e0f7ff"];
+            "/users/oz/home.nix" [color="#a3e0f7ff"];
+            subgraph cluster_users_desktops {
+                label="desktops";
+                style="filled";
+                color="#a3e0f7ff";
+                "/users/oz/desktops/gnome.nix" [color="#81c8e2ff"];
+            }
+        }
+    }
+}
