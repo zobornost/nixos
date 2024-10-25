@@ -5,7 +5,6 @@
 
     bash = {
       enable = true;
-      #blesh.enable = true;
     };
 
     chromium = {
