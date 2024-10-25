@@ -33,13 +33,13 @@
     rio
     scribus
     vim
-    vscode
     yaru-theme
   ])
   ++
   (with unstable-pkgs; [
     _1password
     _1password-gui
+    vscode
     waveterm
   ]);
 }
