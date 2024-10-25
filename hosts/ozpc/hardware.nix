@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   hardware = {
@@ -29,10 +29,16 @@
       powerManagement.enable = false;
       powerManagement.finegrained = false;
       open = false;
+      nvidiaSettings = true;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
 
-    opengl.enable = true;
+    opengl = {
+      enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
+      extraPackages = with pkgs;[ vaapiVdpau nvidia-vaapi-driver ];
+    };
 
     pulseaudio.enable = false;
 
