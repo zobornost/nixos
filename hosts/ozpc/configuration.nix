@@ -77,7 +77,7 @@
     hostName = "ozpc";
     firewall.enable = false;
   };
-  swapDevices = [ ];
+  programs.bash.blesh.enable = true;
   system.stateVersion = "24.05"; # Don't change :)
   time.timeZone = "Europe/London";
   users = {
