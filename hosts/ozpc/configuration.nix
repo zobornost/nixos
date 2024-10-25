@@ -97,4 +97,8 @@
       mc = { gid = 10001; };
     };
   };
+  zramSwap = {
+    enable = true;
+    memoryMax = 8192;
+  };
 }
