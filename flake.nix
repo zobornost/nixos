@@ -6,8 +6,8 @@
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    secrets.url = "git+ssh://git@github.com/ozmodeuz/secrets.git?shallow=1&ref=main";
-    secrets.flake = false;
+    sops.url = "git+ssh://git@github.com/ozmodeuz/sops.git?shallow=1&ref=main";
+    sops.flake = false;
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
   };

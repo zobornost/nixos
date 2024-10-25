@@ -20,20 +20,21 @@ let
     wantedBy = [ "sockets.target" ];
     listenStreams = [ "/run/minecraft/${name}.sock" ];
   };
+
 in
 {
 
   services = {
 
-    /*     cloudflared = {
+    cloudflared = {
       enable = true;
       tunnels = {
-        "686bad5d-9c46-48ea-9bab-60ba1eed53d7" = {
-          credentialsFile = "/home/oz/.cloudflared/cert.pem";
+        "ea690d15-f297-43bf-8f7d-0f6d11ee1f42" = {
+          credentialsFile = config.sops.templates."cloudflared.json".path;
           default = "http_status:404";
         };
       };
-    }; */
+    };
 
     displayManager.defaultSession = "gnome";
 
