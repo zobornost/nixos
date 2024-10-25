@@ -41,8 +41,8 @@
 <!-- flake.nix -->
 <g id="node1" class="node">
 <title>flake.nix</title>
-<polygon fill="#fdd8f4" stroke="#fdd8f4" points="92,-546 16,-546 16,-510 92,-510 92,-546"/>
-<text text-anchor="middle" x="54" y="-523.33" font-family="Times,serif" font-size="14.00">flake.nix</text>
+<polygon fill="#fdd8f4" stroke="#fdd8f4" points="92,-446 16,-446 16,-410 92,-410 92,-446"/>
+<text text-anchor="middle" x="54" y="-423.32" font-family="Times,serif" font-size="14.00">flake.nix</text>
 </g>
 <!-- /common/nix&#45;settings.nix -->
 <g id="node2" class="node">
@@ -53,7 +53,7 @@
 <!-- flake.nix&#45;&#45;/common/nix&#45;settings.nix -->
 <g id="edge1" class="edge">
 <title>flake.nix&#45;&#45;/common/nix&#45;settings.nix</title>
-<path fill="none" stroke="black" d="M57.09,-509.85C63.16,-460.06 82.27,-322.83 112,-290 128.31,-271.98 150.83,-259.87 173.78,-251.72"/>
+<path fill="none" stroke="black" d="M57.67,-409.64C62.89,-380.33 77.13,-322.92 112,-290 129.78,-273.22 152.94,-261.52 176.04,-253.39"/>
 </g>
 <!-- /host/ozpc/configuration.nix -->
 <g id="node3" class="node">
@@ -64,7 +64,7 @@
 <!-- flake.nix&#45;&#45;/host/ozpc/configuration.nix -->
 <g id="edge2" class="edge">
 <title>flake.nix&#45;&#45;/host/ozpc/configuration.nix</title>
-<path fill="none" stroke="black" d="M54.91,-509.54C55.82,-472.57 63.46,-389.34 112,-347 126.71,-334.17 145.22,-326.33 164.35,-321.72"/>
+<path fill="none" stroke="black" d="M62.72,-409.62C71.67,-390.71 88.3,-361.96 112,-347 127.68,-337.1 145.91,-330.52 164.29,-326.2"/>
 </g>
 <!-- /host/ozpc/hardware.nix -->
 <g id="node4" class="node">
@@ -75,7 +75,7 @@
 <!-- flake.nix&#45;&#45;/host/ozpc/hardware.nix -->
 <g id="edge3" class="edge">
 <title>flake.nix&#45;&#45;/host/ozpc/hardware.nix</title>
-<path fill="none" stroke="black" d="M57.73,-509.51C62.93,-481.34 77.03,-428.08 112,-401 130.64,-386.57 154.22,-378.72 177.46,-374.69"/>
+<path fill="none" stroke="black" d="M89.97,-409.6C97.12,-406.37 104.69,-403.31 112,-401 132.88,-394.41 155.85,-389.33 177.66,-385.44"/>
 </g>
 <!-- /host/ozpc/secrets.nix -->
 <g id="node5" class="node">
@@ -86,7 +86,7 @@
 <!-- flake.nix&#45;&#45;/host/ozpc/secrets.nix -->
 <g id="edge4" class="edge">
 <title>flake.nix&#45;&#45;/host/ozpc/secrets.nix</title>
-<path fill="none" stroke="black" d="M64.07,-509.82C73.59,-492.78 90.19,-468.03 112,-455 134.03,-441.84 160.68,-434.66 185.79,-430.85"/>
+<path fill="none" stroke="black" d="M92.02,-428C117.88,-428 153.47,-428 186.06,-428"/>
 </g>
 <!-- /host/ozpc/services.nix -->
 <g id="node6" class="node">
@@ -97,7 +97,7 @@
 <!-- flake.nix&#45;&#45;/host/ozpc/services.nix -->
 <g id="edge5" class="edge">
 <title>flake.nix&#45;&#45;/host/ozpc/services.nix</title>
-<path fill="none" stroke="black" d="M92.02,-520.09C117.28,-514.7 151.82,-507.32 183.78,-500.49"/>
+<path fill="none" stroke="black" d="M89.97,-446.4C97.12,-449.63 104.69,-452.69 112,-455 134.48,-462.09 159.37,-467.44 182.64,-471.43"/>
 </g>
 <!-- /users/oz/home.nix -->
 <g id="node7" class="node">
@@ -108,7 +108,7 @@
 <!-- flake.nix&#45;&#45;/users/oz/home.nix -->
 <g id="edge6" class="edge">
 <title>flake.nix&#45;&#45;/users/oz/home.nix</title>
-<path fill="none" stroke="black" d="M59.71,-546.16C66.82,-569.66 82.69,-609.97 112,-630 136.41,-646.68 167.92,-653.29 196.39,-655.32"/>
+<path fill="none" stroke="black" d="M57.58,-446.26C64.33,-491.25 83.91,-605.52 112,-630 134.81,-649.88 166.91,-656.82 196.25,-658.23"/>
 </g>
 <!-- /users/oz/packages.nix -->
 <g id="node8" class="node">
@@ -119,7 +119,7 @@
 <!-- flake.nix&#45;&#45;/users/oz/packages.nix -->
 <g id="edge7" class="edge">
 <title>flake.nix&#45;&#45;/users/oz/packages.nix</title>
-<path fill="none" stroke="black" d="M56.25,-546.44C59.48,-578.71 71.03,-645.23 112,-679 131.69,-695.23 157.54,-703.31 182.63,-706.99"/>
+<path fill="none" stroke="black" d="M56.56,-446.28C61.4,-498.5 77.93,-646.74 112,-679 130.94,-696.93 157.17,-705.37 182.84,-708.85"/>
 </g>
 <!-- /users/oz/programs.nix -->
 <g id="node9" class="node">
@@ -130,7 +130,7 @@
 <!-- flake.nix&#45;&#45;/users/oz/programs.nix -->
 <g id="edge8" class="edge">
 <title>flake.nix&#45;&#45;/users/oz/programs.nix</title>
-<path fill="none" stroke="black" d="M54.11,-546.33C53.24,-586.71 57.29,-683.62 112,-733 130.84,-750.01 156.3,-758.33 181.29,-762"/>
+<path fill="none" stroke="black" d="M55.76,-446.25C58.63,-505.73 70.82,-692.47 112,-733 130.29,-751 155.89,-759.55 181.18,-763.12"/>
 </g>
 <!-- /users/oz/secrets.nix -->
 <g id="node10" class="node">
@@ -141,7 +141,7 @@
 <!-- flake.nix&#45;&#45;/users/oz/secrets.nix -->
 <g id="edge9" class="edge">
 <title>flake.nix&#45;&#45;/users/oz/secrets.nix</title>
-<path fill="none" stroke="black" d="M56.44,-546.47C60.99,-600 76.93,-753.56 112,-787 132.69,-806.73 162.2,-814.99 190.16,-817.8"/>
+<path fill="none" stroke="black" d="M55.2,-446.15C56.31,-512.15 63.64,-738.08 112,-787 132.2,-807.43 161.78,-815.79 189.93,-818.49"/>
 </g>
 <!-- /users/oz/desktops/gnome.nix -->
 <g id="node11" class="node">
@@ -152,7 +152,7 @@
 <!-- flake.nix&#45;&#45;/users/oz/desktops/gnome.nix -->
 <g id="edge10" class="edge">
 <title>flake.nix&#45;&#45;/users/oz/desktops/gnome.nix</title>
-<path fill="none" stroke="black" d="M92.02,-536.08C117.76,-541.7 153.14,-549.42 185.61,-556.5"/>
+<path fill="none" stroke="black" d="M59.42,-446.09C66.35,-470.55 82.19,-513.76 112,-537 125.38,-547.43 141.19,-555.06 157.55,-560.63"/>
 </g>
 <!-- /common/overlays/mcman.nix -->
 <g id="node12" class="node">
@@ -160,17 +160,32 @@
 <polygon fill="#b6d780" stroke="#b6d780" points="385.12,-68 157.62,-68 157.62,-32 385.12,-32 385.12,-68"/>
 <text text-anchor="middle" x="271.38" y="-45.33" font-family="Times,serif" font-size="14.00">/common/overlays/mcman.nix</text>
 </g>
+<!-- flake.nix&#45;&#45;/common/overlays/mcman.nix -->
+<g id="edge11" class="edge">
+<title>flake.nix&#45;&#45;/common/overlays/mcman.nix</title>
+<path fill="none" stroke="black" d="M55.27,-409.81C56.63,-344.7 64.71,-124.66 112,-77 124.38,-64.53 140.25,-56.56 157.16,-51.63"/>
+</g>
 <!-- /common/overlays/displayswitcher.nix -->
 <g id="node13" class="node">
 <title>/common/overlays/displayswitcher.nix</title>
 <polygon fill="#b6d780" stroke="#b6d780" points="414.75,-122 128,-122 128,-86 414.75,-86 414.75,-122"/>
 <text text-anchor="middle" x="271.38" y="-99.33" font-family="Times,serif" font-size="14.00">/common/overlays/displayswitcher.nix</text>
 </g>
+<!-- flake.nix&#45;&#45;/common/overlays/displayswitcher.nix -->
+<g id="edge12" class="edge">
+<title>flake.nix&#45;&#45;/common/overlays/displayswitcher.nix</title>
+<path fill="none" stroke="black" d="M55.86,-409.81C59,-351.44 71.87,-170.31 112,-131 116.78,-126.32 122.06,-122.27 127.7,-118.79"/>
+</g>
 <!-- /common/overlays/arcmenu.nix -->
 <g id="node14" class="node">
 <title>/common/overlays/arcmenu.nix</title>
 <polygon fill="#b6d780" stroke="#b6d780" points="390.38,-176 152.38,-176 152.38,-140 390.38,-140 390.38,-176"/>
 <text text-anchor="middle" x="271.38" y="-153.32" font-family="Times,serif" font-size="14.00">/common/overlays/arcmenu.nix</text>
+</g>
+<!-- flake.nix&#45;&#45;/common/overlays/arcmenu.nix -->
+<g id="edge13" class="edge">
+<title>flake.nix&#45;&#45;/common/overlays/arcmenu.nix</title>
+<path fill="none" stroke="black" d="M56.58,-409.52C61.43,-357.44 77.87,-211.25 112,-180 123.36,-169.59 137.24,-162.67 152.01,-158.2"/>
 </g>
 </g>
 </svg>
