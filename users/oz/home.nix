@@ -1,4 +1,4 @@
-{ config, pkgs, unstable-pkgs, home-manager, ... }:
+{ config, inputs, ... }:
 
 {
   home = {

@@ -72,17 +72,17 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
-        "sops": "sops",
+        "secrets": "secrets",
         "sops-nix": "sops-nix"
       }
     },
-    "sops": {
+    "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1729815050,
-        "narHash": "sha256-aut5sVrHEL6P3VFpTgiROUcSK8c79qPT5N1qNxZ6D2w=",
+        "lastModified": 1729863189,
+        "narHash": "sha256-oZZyF766EDzZNfdAoFH8ngemNsi4eI4GBkPg2BVLQoQ=",
         "ref": "main",
-        "rev": "0d1ca17e95923b718d94609f57719ad8877e59b6",
+        "rev": "2df198736e69d41c46ee68d4dae3e559cb2469db",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/ozmodeuz/sops.git"
