@@ -1,4 +1,4 @@
-{ config, lib, inputs, ... }:
+{ config, inputs, ... }:
 
 let
   sopsPath = builtins.toString inputs.sops;
