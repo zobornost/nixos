@@ -154,8 +154,8 @@
   home = {
 
     file = {
-      "${config.home.homeDirectory}/.config/gnome-shell/gnome-shell-light.css".source = ./themes/gnome-shell-light.css;
-      "${config.home.homeDirectory}/.local/share/backgrounds/trans_wallpaper_1.png".source = ./wallpapers/trans_wallpaper_1.png;
+      "${config.home.homeDirectory}/.config/gnome-shell/gnome-shell-light.css".source = ../themes/gnome-shell-light.css;
+      "${config.home.homeDirectory}/.local/share/backgrounds/trans_wallpaper_1.png".source = ../wallpapers/trans_wallpaper_1.png;
     };
 
     packages = with pkgs; [
