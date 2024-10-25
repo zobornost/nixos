@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 
 {
   hardware = {
@@ -19,7 +19,7 @@
         MAXTEMP=/sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm1=70 /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm2=70 hwmon6/pwm1=40
         MINSTART=/sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm1=150 /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm2=150 /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm6=150
         MINSTOP=/sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm1=0 /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm2=0 /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm6=190
-        MINPWM=/sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm1=0 /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm2=0 /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm6=190
+        MINPWM=/sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm1=0 /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm2=0 /sys/devices/platform/nct6775.656/hwmon/hwmon[[:print:]]*/pwm6=170
         AVERAGE=3
       '';
     };
