@@ -1,7 +1,9 @@
 # to do
 
+[ ] mess with sway
 [ ] fix up plymouth
 [ ] fix suspend issues
+[ ] fix display config switcher profiles in dconf
 [ ] add vscode extensions to nixos config
 [ ] tidy up all the inputs in nix files
 [ ] gnome online accounts (goa)

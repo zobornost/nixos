@@ -1,11 +1,11 @@
 {
-  description = "ozflake";
+  description = "oz's nix config";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-24.05";
-    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+
+    nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     secrets = {
@@ -16,9 +16,13 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nvchad4nix = {
+      url = "github:nix-community/nix4nvchad";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, sops-nix, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, sops-nix, nvchad4nix, ... }@inputs:
 
     let
       lib = nixpkgs.lib;
@@ -27,37 +31,25 @@
         inherit system;
         config = { allowUnfree = true; };
         overlays = [
-          (import ./common/overlays/arcmenu.nix)
-          (import ./common/overlays/displayswitcher.nix)
-          (import ./common/overlays/mcman.nix)
+          (import ./overlays/arcmenu.nix)
+          (import ./overlays/displayswitcher.nix)
+          (import ./overlays/mcman.nix)
         ];
-      };
-      unstable-pkgs = import nixpkgs-unstable {
-        inherit system;
-        config = { allowUnfree = true; };
-        overlays = [ ];
       };
     in
     {
       nixosConfigurations = {
         ozpc = lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs pkgs unstable-pkgs; };
+          specialArgs = { inherit inputs pkgs; };
           modules = [
-            ./common/nix-settings.nix
-            ./hosts/ozpc/configuration.nix
-            ./hosts/ozpc/hardware.nix
-            ./hosts/ozpc/secrets.nix
-            ./hosts/ozpc/services.nix
+            ./hosts/ozpc
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
-              home-manager.extraSpecialArgs = { inherit inputs pkgs unstable-pkgs; };
+              home-manager.extraSpecialArgs = { inherit inputs pkgs; };
               home-manager.users.oz.imports = [
-                ./users/oz/home.nix
-                ./users/oz/packages.nix
-                ./users/oz/programs.nix
-                ./users/oz/desktops/gnome.nix
+                ./home/oz/ozpc.nix
               ];
             }
           ];

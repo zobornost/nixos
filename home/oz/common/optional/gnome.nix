@@ -24,7 +24,7 @@
         gtk-theme = "Yaru-magenta";
         icon-theme = "Yaru-magenta";
         scaling-factor = mkUint32 1;
-        text-scaling-factor = 1.0;
+        text-scaling-factor = 1.5;
         toolbar-style = "text";
       };
 
@@ -34,15 +34,14 @@
 
       "org/gnome/mutter" = {
         center-new-windows = true;
-        experimental-features = [ "scale-monitor-framebuffer" ];
+        #experimental-features = [ "scale-monitor-framebuffer" ];
         overlay-key = "Super_L";
       };
 
       "org/gnome/shell" = {
         disable-user-extensions = false;
-        disabled-extensions = [ "background-logo@fedorahosted.org" "apps-menu@gnome-shell-extensions.gcampax.github.com" "user-theme@gnome-shell-extensions.gcampax.github.com" "HideItems@fablevi.github.io" "blur-my-shell@aunetx" "appindicatorsupport@rgcjonas.gmail.com" "trayIconsReloaded@selfmade.pl" "status-icons@gnome-shell-extensions.gcampax.github.com" ];
-        enabled-extensions = [ "gsconnect@andyholmes.github.io" "dash-to-panel@jderose9.github.com" "arcmenu@arcmenu.com" "user-theme-x@tuberry.github.io" "mediacontrols@cliffniff.github.com" "arch-update@RaphaelRochet" "display-configuration-switcher@knokelmaat.gitlab.com" "rounded-window-corners@fxgn" "tailscale@joaophi.github.com" "dim-background-windows@stephane-13.github.com" "appindicatorsupport@rgcjonas.gmail.com" "arcmenu@arcmenu.com" "dash-to-panel@jderose9.github.com" "gsconnect@andyholmes.github.io" "mediacontrols@cliffniff.github.com" "tailscale@joaophi.github.com" "user-theme-x@tuberry.github.io" ];
         favorite-apps = [ "org.gnome.Nautilus.desktop" "chromium-browser.desktop" "microsoft-edge.desktop" "code.desktop" "1password.desktop" ];
+        remember-mount-password = false;
         welcome-dialog-last-shown-version = "46.2";
       };
 
@@ -50,25 +49,36 @@
         all-apps-button-action = "All_Programs";
         application-shortcuts = "[{'id': 'org.gnome.Settings.desktop'}, {'id': 'ArcMenu_Software', 'name': 'Software'}, {'id': 'org.gnome.tweaks.desktop'}, {'id': 'com.mattjakeman.ExtensionManager.desktop', 'name': 'Extensions'}, {'id': 'ArcMenu_ActivitiesOverview', 'name': 'Overview', 'icon': 'view-fullscreen-symbolic'}]";
         arc-menu-icon = 71;
+        arcmenu-hotkey = [ ];
+        button-padding = 5;
         context-menu-items = "[{'id': 'ArcMenu_Settings', 'name': 'ArcMenu Settings', 'icon': 'ArcMenu_ArcMenuIcon'}, {'id': 'ArcMenu_PanelExtensionSettings', 'name': 'Panel Extension Settings', 'icon': 'application-x-addon-symbolic'}, {'id': 'com.mattjakeman.ExtensionManager.desktop'}, {'id': 'ArcMenu_Separator', 'name': 'Separator', 'icon': 'list-remove-symbolic'}, {'id': 'ArcMenu_PowerOptions', 'name': 'Power Options', 'icon': 'system-shutdown-symbolic'}, {'id': 'ArcMenu_ActivitiesOverview', 'name': 'Activities Overview', 'icon': 'view-fullscreen-symbolic'}, {'id': 'ArcMenu_ShowDesktop', 'name': 'Show Desktop', 'icon': 'computer-symbolic'}]";
-        custom-menu-button-icon-size = 34.0;
+        custom-menu-button-icon-size = 20.0;
         default-menu-view = "Frequent_Apps";
-        distro-icon = 0;
+        distro-icon = 22;
         hide-overview-on-startup = true;
-        menu-button-appearance = "Icon";
+        menu-button-appearance = "Icon_Text";
         menu-button-icon = "Distro_Icon";
+        menu-layout = "Default";
+        menu-position-alignment = 50;
         multi-monitor = true;
+        override-menu-theme = false;
         position-in-panel = "Center";
         power-options = [ (mkTuple [ 0 true ]) (mkTuple [ 1 true ]) (mkTuple [ 4 true ]) (mkTuple [ 2 true ]) (mkTuple [ 3 true ]) (mkTuple [ 5 false ]) (mkTuple [ 6 false ]) (mkTuple [ 7 false ]) ];
         prefs-visible-page = 0;
+        runner-hotkey = [ "Super_L" ];
+        runner-position = "Centered";
+        runner-search-display-style = "Grid";
+        runner-show-frequent-apps = true;
+        search-entry-border-radius = mkTuple [ true 25 ];
         show-activities-button = true;
         vert-separator = true;
       };
 
-      "org/gnome/shell/extensions/dash-to-panel" = {
-        animate-appicon-hover-animation-extent = "{'RIPPLE': 4, 'PLANK': 4, 'SIMPLE': 1}";
+      /* "org/gnome/shell/extensions/dash-to-panel" = {
+        animate-appicon-hover = false;
         appicon-margin = 3;
         appicon-padding = 6;
+        appicon-style = "NORMAL";
         available-monitors = [ 0 1 ];
         dot-color-1 = "#976ea0";
         dot-color-2 = "#976ea0";
@@ -85,37 +95,53 @@
         focus-highlight-color = "#ffffff";
         focus-highlight-dominant = false;
         focus-highlight-opacity = 20;
+        group-apps = true;
+        group-apps-underline-unfocused = false;
+        group-apps-use-fixed-width = true;
+        group-apps-use-launchers = false;
+        hide-overview-on-startup = true;
         hotkeys-overlay-combo = "TEMPORARILY";
+        isolate-workspaces = false;
         leftbox-padding = -1;
         middle-click-action = "LAUNCH";
+        multi-monitors = false;
         panel-anchors = ''
           {"0":"MIDDLE","1":"MIDDLE"}
         '';
         panel-element-positions = ''
-          {"0":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"centerMonitor"},{"element":"taskbar","visible":true,"position":"centerMonitor"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}],"1":[{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"centerMonitor"},{"element":"taskbar","visible":true,"position":"centerMonitor"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}
+          {"0":[{"element":"centerBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":false,"position":"stackedTL"},{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"centerMonitor"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}],"1":[{"element":"centerBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":false,"position":"stackedTL"},{"element":"showAppsButton","visible":false,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"centerMonitor"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}]}\n
         '';
+        panel-element-positions-monitors-sync = false;
         panel-lengths = ''
           {"0":100,"1":100}
         '';
+        panel-positions = ''
+          {"0":"TOP","1":"TOP"}\n
+        '';
         panel-sizes = ''
-          {"0":48,"1":48}
+          {"0":32,"1":32}
         '';
         primary-monitor = 0;
+        progress-show-count = true;
         shift-click-action = "LAUNCH";
         shift-middle-click-action = "LAUNCH";
+        show-apps-icon-file = "";
+        show-favorites = false;
+        show-running-apps = true;
         status-icon-padding = -1;
+        stockgs-keep-top-panel = false;
         trans-bg-color = "#e5b8d9";
         trans-gradient-bottom-opacity = 0.1;
         trans-gradient-top-color = "#ffffff";
         trans-gradient-top-opacity = 0.1;
-        trans-panel-opacity = 0.7;
-        trans-use-custom-bg = true;
-        trans-use-custom-gradient = true;
+        trans-panel-opacity = 0.0;
+        trans-use-custom-bg = false;
+        trans-use-custom-gradient = false;
         trans-use-custom-opacity = true;
-        trans-use-dynamic-opacity = true;
+        trans-use-dynamic-opacity = false;
         tray-padding = -1;
         window-preview-title-position = "TOP";
-      };
+      }; */
 
       "org/gnome/shell/extensions/display-configuration-switcher" = {
         configs = ''
@@ -148,14 +174,21 @@
         x-shell-night = "Yaru-magenta-dark";
         x-stylesheet = true;
       };
+
+      "org/gnome/shell/extensions/window-title-is-back" = {
+        colored-icon = true;
+        fixed-width = false;
+        show-app = true;
+        show-icon = true;
+      };
     };
   };
 
   home = {
 
     file = {
-      "${config.home.homeDirectory}/.config/gnome-shell/gnome-shell-light.css".source = ../themes/gnome-shell-light.css;
-      "${config.home.homeDirectory}/.local/share/backgrounds/trans_wallpaper_1.png".source = ../wallpapers/trans_wallpaper_1.png;
+      #"${config.home.homeDirectory}/.config/gnome-shell/gnome-shell-light.css".source = ../themes/gnome-shell-light.css;
+      "${config.home.homeDirectory}/.local/share/backgrounds/trans_wallpaper_1.png".source = ../../../../resources/trans_wallpaper_1.png;
     };
 
     packages = with pkgs; [
@@ -169,16 +202,20 @@
   programs = {
     gnome-shell = {
       enable = true;
-      extensions = with pkgs; [
-        { package = gnomeExtensions.appindicator; }
+      extensions = (with pkgs; [
         { package = gnomeExtensions.arcmenu; }
-        { package = gnomeExtensions.dash-to-panel; }
         { package = gnomeExtensions.display-configuration-switcher; }
+        { package = gnomeExtensions.appindicator; }
+        { package = gnomeExtensions.dash-to-panel; }
+        { package = gnomeExtensions.forge; }
         { package = gnomeExtensions.gsconnect; }
         { package = gnomeExtensions.media-controls; }
+        #{ package = gnomeExtensions.paperwm; }
+        { package = gnomeExtensions.rounded-window-corners-reborn; }
         { package = gnomeExtensions.tailscale-qs; }
         { package = gnomeExtensions.user-themes-x; }
-      ];
+        { package = gnomeExtensions.window-title-is-back; }
+      ]);
     };
   };
 
