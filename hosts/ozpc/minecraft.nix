@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 let
   mkMinecraftService = name: path: jdkPackage: {
     enable = true;

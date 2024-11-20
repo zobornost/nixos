@@ -1,29 +1,28 @@
 {
   description = "oz's nix config";
 
-  inputs = {
+  inputs =
+    {
+      nixpkgs.url = "nixpkgs/nixos-unstable";
+      home-manager = {
+        url = "github:nix-community/home-manager";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
+      secrets = {
+        url = "git+ssh://git@github.com/ozmodeuz/sops.git?shallow=1&ref=main";
+        flake = false;
+      };
+      sops-nix = {
+        url = "github:Mic92/sops-nix";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
+      ags = {
+        url = "github:ozmodeuz/ags";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
+    };
 
-    nixpkgs.url = "nixpkgs/nixos-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    secrets = {
-      url = "git+ssh://git@github.com/ozmodeuz/sops.git?shallow=1&ref=main";
-      flake = false;
-    };
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nvchad4nix = {
-      url = "github:nix-community/nix4nvchad";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
-
-  outputs = { self, nixpkgs, home-manager, sops-nix, nvchad4nix, ... }@inputs:
-
+  outputs = { self, nixpkgs, home-manager, sops-nix, ags, ... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -34,6 +33,7 @@
           (import ./overlays/arcmenu.nix)
           (import ./overlays/displayswitcher.nix)
           (import ./overlays/mcman.nix)
+          #niri.overlays.niri
         ];
       };
     in
@@ -41,7 +41,7 @@
       nixosConfigurations = {
         ozpc = lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs pkgs; };
+          specialArgs = { inherit inputs pkgs ags; };
           modules = [
             ./hosts/ozpc
             home-manager.nixosModules.home-manager

@@ -13,6 +13,7 @@
     fd
     graphviz
     inkscape
+    lazygit
     mcman
     nixpkgs-fmt
     nuclear

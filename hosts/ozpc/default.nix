@@ -1,4 +1,5 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ags, ... }:
+
 {
   imports = [
     ./hardware.nix
@@ -25,7 +26,7 @@
     timeout = 0;
   };
 
-  services.displayManager.defaultSession = "sway";
+  services.displayManager.defaultSession = "niri";
 
   services.flatpak.enable = true;
 
@@ -37,6 +38,7 @@
     cachix
     linux-firmware
     wget
+    ags.packages.${pkgs.system}.default
   ]);
 
   zramSwap.enable = true;
