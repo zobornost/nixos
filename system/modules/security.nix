@@ -2,16 +2,6 @@
 
 {
 
-  imports = [
-    ./locale.nix
-    ./nix.nix
-  ];
-
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-
-  programs.bash.blesh.enable = true;
-
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;

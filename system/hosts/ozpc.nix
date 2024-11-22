@@ -2,15 +2,27 @@
 
 {
   imports = [
-    ./hardware.nix
-    ./fancontrol.nix
-    ./filesystems.nix
-    ./minecraft.nix
-    ./secrets.nix
-    ../common/core
-    ../common/optional/desktop
-    ../common/optional/services
-    ../common/users/oz
+    ../modules/audio.nix
+    ../modules/cloudflared.nix
+    ../modules/displaymanager.nix
+    ../modules/fonts.nix
+    #../modules/hyprland.nix
+    ../modules/locale.nix
+    ../modules/misc.nix
+    ../modules/niri.nix
+    ../modules/nix.nix
+    ../modules/openssh.nix
+    ../modules/plymouth.nix
+    ../modules/security.nix
+    #../modules/sway.nix
+    ../modules/tailscale.nix
+    ../modules/wayland.nix
+    ../modules/yubikey.nix
+    ../modules/ozpc/hardware.nix
+    ../modules/ozpc/fancontrol.nix
+    ../modules/ozpc/filesystems.nix
+    ../modules/ozpc/minecraft.nix
+    ../modules/ozpc/secrets.nix
   ];
 
   networking = {

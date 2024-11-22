@@ -20,9 +20,13 @@
         url = "github:ozmodeuz/ags";
         inputs.nixpkgs.follows = "nixpkgs";
       };
+      stylix = {
+        url = "github:danth/stylix";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
     };
 
-  outputs = { self, nixpkgs, home-manager, sops-nix, ags, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, sops-nix, ags, stylix, ... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -41,15 +45,17 @@
       nixosConfigurations = {
         ozpc = lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs pkgs ags; };
+          specialArgs = { inherit inputs pkgs ags stylix; };
           modules = [
-            ./hosts/ozpc
+            ./system/hosts/ozpc.nix
+            ./system/users/oz.nix
+            stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.extraSpecialArgs = { inherit inputs pkgs; };
               home-manager.users.oz.imports = [
-                ./home/oz/ozpc.nix
+                ./home/oz.nix
               ];
             }
           ];
