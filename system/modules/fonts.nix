@@ -3,12 +3,8 @@
   fonts.packages = (with pkgs; [
     fira
     ibm-plex
-    (nerdfonts.override {
-      fonts = [
-        "0xProto"
-        "JetBrainsMono"
-        "NerdFontsSymbolsOnly"
-      ];
-    })
+    nerd-fonts._0xproto
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.symbols-only
   ]);
 }

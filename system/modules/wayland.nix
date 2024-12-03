@@ -6,7 +6,7 @@
       WLR_NO_HARDWARE_CURSORS = "1";
     };
     systemPackages = (with pkgs; [
-      deskflow
+      #deskflow
       libei
       libportal
     ]);

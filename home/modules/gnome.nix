@@ -40,9 +40,8 @@
 
       "org/gnome/shell" = {
         disable-user-extensions = false;
-        favorite-apps = [ "org.gnome.Nautilus.desktop" "chromium-browser.desktop" "microsoft-edge.desktop" "code.desktop" "1password.desktop" ];
+        #favorite-apps = [ "org.gnome.Nautilus.desktop" "chromium-browser.desktop" "microsoft-edge.desktop" "code.desktop" "1password.desktop" ];
         remember-mount-password = false;
-        welcome-dialog-last-shown-version = "46.2";
       };
 
       "org/gnome/shell/extensions/arcmenu" = {
@@ -193,8 +192,8 @@
 
     packages = with pkgs; [
       dconf2nix
-      gnome.gnome-software
-      gnome.gnome-terminal
+      gnome-software
+      gnome-terminal
       gnome-extension-manager
     ];
   };
@@ -207,10 +206,10 @@
         { package = gnomeExtensions.display-configuration-switcher; }
         { package = gnomeExtensions.appindicator; }
         { package = gnomeExtensions.dash-to-panel; }
-        { package = gnomeExtensions.forge; }
+        #{ package = gnomeExtensions.forge; }
         { package = gnomeExtensions.gsconnect; }
-        { package = gnomeExtensions.media-controls; }
-        #{ package = gnomeExtensions.paperwm; }
+        #{ package = gnomeExtensions.media-controls; }
+        { package = gnomeExtensions.paperwm; }
         { package = gnomeExtensions.rounded-window-corners-reborn; }
         { package = gnomeExtensions.tailscale-qs; }
         { package = gnomeExtensions.user-themes-x; }
