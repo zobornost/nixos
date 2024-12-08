@@ -11,6 +11,8 @@ let
       ExecStart = "${pkgs.bash}/bin/bash /home/oz/.minecraft/${name}/server/start.sh";
       Restart = "always";
       WorkingDirectory = "/home/oz/.minecraft/${name}/server";
+      StandardInput = "socket";
+      StandardOutput = "journal";
     };
     wantedBy = [ "multi-user.target" ];
   };
@@ -18,7 +20,7 @@ let
   mkMinecraftSocket = name: {
     description = "Minecraft ${name} Socket";
     wantedBy = [ "sockets.target" ];
-    listenStreams = [ "/run/minecraft/${name}.sock" ];
+    socketConfig.ListenFIFO = [ "/run/minecraft/${name}" ];
   };
 
 in
