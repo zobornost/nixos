@@ -60,6 +60,7 @@
             }
           ];
         };
+        book = lib.nixosSystem {
       };
     };
 }
