@@ -5,9 +5,10 @@
       enable = true;
       displayManager = {
         gdm = {
-          enable = true;
+          enable = false;
           autoSuspend = false;
         };
+        sddm.enable = true;
       };
     };
   };
