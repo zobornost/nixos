@@ -18,7 +18,7 @@ final: prev: {
 
       buildInputs = [
         prev.glib
-        prev.gnome.gnome-shell
+        prev.gnome-shell
       ];
 
       buildPhase = ''

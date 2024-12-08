@@ -14,6 +14,8 @@ in
     enable = true;
     extraConfig = ''
       AddKeysToAgent yes
+      Host *
+        IdentityAgent ~/.1password/agent.sock
     '';
   };
   home.file = {

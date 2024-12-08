@@ -1,15 +1,14 @@
-{ pkgs, ags, ... }:
+{ lib, pkgs, ags, ... }:
 
 {
   imports = [
     ../modules/audio.nix
-    ../modules/cloudflared.nix
-    ../modules/desktops.nix
-    ../modules/development.nix
+    #../modules/cloudflared.nix
     ../modules/displaymanager.nix
     ../modules/fonts.nix
     #../modules/hyprland.nix
     ../modules/locale.nix
+    ../modules/desktops.nix
     ../modules/misc.nix
     ../modules/nix.nix
     ../modules/openssh.nix
@@ -19,18 +18,17 @@
     ../modules/tailscale.nix
     ../modules/wayland.nix
     ../modules/yubikey.nix
-    ../modules/ozpc/hardware.nix
-    ../modules/ozpc/fancontrol.nix
-    ../modules/ozpc/filesystems.nix
-    ../modules/ozpc/minecraft.nix
-    ../modules/ozpc/secrets.nix
+    ../modules/book/hardware.nix
+    ../modules/book/filesystems.nix
+    #../modules/book/secrets.nix
   ];
 
   networking = {
-    hostName = "ozpc";
+    hostName = "book";
     networkmanager.enable = true;
     firewall.enable = false;
     enableIPv6 = false;
+    useDHCP = lib.mkDefault true;
   };
 
   boot.loader = {
@@ -40,6 +38,8 @@
   };
 
   services.flatpak.enable = true;
+
+  services.fprintd.enable = true;
 
   system.stateVersion = "24.05"; # Don't change :)
 
@@ -51,7 +51,5 @@
     wget
     ags.packages.${pkgs.system}.default
   ]);
-
-  zramSwap.enable = true;
 
 }
