@@ -37,7 +37,6 @@
           (import ./overlays/arcmenu.nix)
           (import ./overlays/displayswitcher.nix)
           (import ./overlays/mcman.nix)
-          #niri.overlays.niri
         ];
       };
     in

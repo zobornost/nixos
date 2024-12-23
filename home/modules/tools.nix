@@ -27,12 +27,6 @@
     shellcheck
     swig
   ]);
-  programs.bash.enable = true;
-  programs.bash.initExtra = ''
-    export PATH="$PATH:$HOME/.config/emacs/bin:$HOME/.npm-packages"
-    export EDITOR="micro"
-  '';
-
   programs.home-manager.enable = true;
   programs.micro.enable = true;
 }

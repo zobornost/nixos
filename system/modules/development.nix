@@ -1,5 +1,9 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = [ pkgs.cargo pkgs.rustc ];
+  environment.systemPackages=  with pkgs; [ 
+    blesh
+    devenv
+  ];
+  programs.direnv.enable = true;
 }

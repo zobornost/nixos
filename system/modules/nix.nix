@@ -2,6 +2,9 @@
 
 {
   nix = {
+    extraOptions = ''
+      trusted-users = root oz
+      '';
     gc = {
       automatic = true;
       dates = "weekly";

@@ -4,12 +4,12 @@
   imports = [
     ../modules/audio.nix
     #../modules/cloudflared.nix
+    ../modules/development.nix
     ../modules/displaymanager.nix
     ../modules/fonts.nix
     #../modules/hyprland.nix
     ../modules/locale.nix
     ../modules/desktops.nix
-    ../modules/misc.nix
     ../modules/nix.nix
     ../modules/openssh.nix
     ../modules/plymouth.nix

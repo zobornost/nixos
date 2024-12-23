@@ -10,7 +10,6 @@
     ../modules/fonts.nix
     #../modules/hyprland.nix
     ../modules/locale.nix
-    ../modules/misc.nix
     ../modules/nix.nix
     ../modules/openssh.nix
     ../modules/plymouth.nix

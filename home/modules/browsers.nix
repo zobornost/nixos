@@ -4,8 +4,7 @@
   programs.chromium = {
     enable = true;
     extensions = [
-      #"aeblfdkhhhdcdjpifhhbdiojplfjncoa" # 1password
-      "nngceckbapebfimnlniiiahkandclblb" # bitwarden
+      "aeblfdkhhhdcdjpifhhbdiojplfjncoa" # 1password
       "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
     ];
   };
