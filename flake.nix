@@ -76,6 +76,23 @@
             }
           ];
         };
+        think = lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit inputs pkgs ags stylix; };
+          modules = [
+            ./system/hosts/think.nix
+            ./system/users/oz.nix
+            stylix.nixosModules.stylix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.extraSpecialArgs = { inherit inputs pkgs; };
+              home-manager.users.oz.imports = [
+                ./home/oz.nix
+              ];
+            }
+          ];
+        };
       };
     };
 }
