@@ -15,7 +15,6 @@
     graphviz
     inkscape
     lazygit
-    mcman
     nix-index
     nixpkgs-fmt
     nuclear

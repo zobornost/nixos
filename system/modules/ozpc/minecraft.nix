@@ -32,4 +32,5 @@ in
   systemd.services.skyblock = mkMinecraftService "skyblock" "/home/oz/.minecraft/skyblock/server" pkgs.jdk;
   systemd.sockets.mc4eva = mkMinecraftSocket "mc4eva";
   systemd.sockets.skyblock = mkMinecraftSocket "skyblock";
+  environment.systemPackages = [ pkgs.mcman ];
 }

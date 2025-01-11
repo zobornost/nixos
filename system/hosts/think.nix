@@ -4,7 +4,7 @@
   imports = [
     #../modules/audio.nix
     #../modules/cloudflared.nix
-    #../modules/development.nix
+    ../modules/development.nix
     ../modules/displaymanager.nix
     ../modules/fonts.nix
     #../modules/hyprland.nix
@@ -20,7 +20,7 @@
     #../modules/yubikey.nix
     ../modules/think/hardware.nix
     ../modules/think/filesystems.nix
-    #../modules/think/secrets.nix
+    ../modules/think/secrets.nix
   ];
 
   networking = {

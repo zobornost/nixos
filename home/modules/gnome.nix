@@ -24,7 +24,7 @@
         gtk-theme = "Yaru-magenta";
         icon-theme = "Yaru-magenta";
         scaling-factor = mkUint32 1;
-        text-scaling-factor = 1.5;
+        text-scaling-factor = 1;
         toolbar-style = "text";
       };
 
