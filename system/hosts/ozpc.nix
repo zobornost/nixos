@@ -16,6 +16,7 @@
     ../modules/security.nix
     #../modules/sway.nix
     ../modules/tailscale.nix
+    ../modules/vms.nix
     ../modules/wayland.nix
     ../modules/yubikey.nix
     ../modules/ozpc/hardware.nix

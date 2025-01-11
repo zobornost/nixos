@@ -11,6 +11,7 @@
     curl
     eyedropper
     fd
+    gparted
     graphviz
     inkscape
     lazygit

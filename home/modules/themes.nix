@@ -2,9 +2,10 @@
 
 {
   home.packages = (with pkgs; [
+    adwaita-qt
     imagemagick
-    yaru-theme
     pywal16
     wallust
+    yaru-theme
   ]);
 }

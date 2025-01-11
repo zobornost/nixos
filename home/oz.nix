@@ -5,7 +5,7 @@
     ./modules/chat.nix
     ./modules/editors.nix
     ./modules/git.nix
-    ./modules/gnome.nix
+    #./modules/gnome.nix
     ./modules/libraries.nix
     ./modules/ssh.nix
     ./modules/terminals.nix

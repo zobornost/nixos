@@ -1,11 +1,8 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages=  with pkgs; [ 
-    blesh
+  environment.systemPackages = with pkgs; [
     devenv
-    nushell
-    starship
   ];
   programs.direnv.enable = true;
 }

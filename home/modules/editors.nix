@@ -6,6 +6,6 @@
     lapce
     vim
     vscode
-    zed-editor
+    #zed-editor
   ]);
 }
