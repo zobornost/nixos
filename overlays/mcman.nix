@@ -22,12 +22,5 @@ final: prev: {
         "rpackwiz-0.1.0" = "pOotNPIZS/BXiJWZVECXzP1lkb/o9J1tu6G2OqyEnI8=";
       };
     };
-
-    meta = {
-      description = "A fast line-oriented regex search tool, similar to ag and ack";
-      homepage = "https://github.com/BurntSushi/ripgrep";
-      license = prev.lib.licenses.unlicense;
-      maintainers = [ ];
-    };
   };
 }

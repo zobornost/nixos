@@ -1,0 +1,6 @@
+{ ... }:
+{
+  networking = {
+    hostName = "book";
+  };
+}

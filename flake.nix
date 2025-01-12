@@ -1,96 +1,69 @@
 {
-  description = "oz's nix config";
-
-  inputs =
-    {
-      nixpkgs.url = "nixpkgs/nixos-unstable";
-      home-manager = {
-        url = "github:nix-community/home-manager";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
-      secrets = {
-        url = "git+ssh://git@github.com/ozmodeuz/sops.git?shallow=1&ref=main";
-        flake = false;
-      };
-      sops-nix = {
-        url = "github:Mic92/sops-nix";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
-      ags = {
-        url = "github:ozmodeuz/ags";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
-      stylix = {
-        url = "github:danth/stylix";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
+  inputs = {
+    lix = {
+      url = "https://git.lix.systems/lix-project/lix/archive/main.tar.gz";
+      flake = false;
     };
-
-  outputs = { self, nixpkgs, home-manager, sops-nix, ags, stylix, ... }@inputs:
+    lix-module = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/main.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.lix.follows = "lix";
+    };
+    nixpkgs.url = "nixpkgs/nixos-unstable";
+    secrets = {
+      url = "git+ssh://git@github.com/ozmodeuz/sops.git?shallow=1&ref=main";
+      flake = false;
+    };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+  outputs = { self, lix, lix-module, nixpkgs, secrets, sops-nix, stylix, ... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
-        config = { allowUnfree = true; };
-        overlays = [
-          (import ./overlays/arcmenu.nix)
-          (import ./overlays/displayswitcher.nix)
-          (import ./overlays/mcman.nix)
-        ];
+        config = {
+          allowUnfree = true;
+          overlays = [
+            (import ./overlays/mcman.nix)
+          ];
+        };
       };
     in
     {
       nixosConfigurations = {
-        ozpc = lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit inputs pkgs ags stylix; };
-          modules = [
-            ./system/hosts/ozpc.nix
-            ./system/users/oz.nix
-            stylix.nixosModules.stylix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.extraSpecialArgs = { inherit inputs pkgs; };
-              home-manager.users.oz.imports = [
-                ./home/oz.nix
-              ];
-            }
-          ];
-        };
         book = lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs pkgs ags stylix; };
+          specialArgs = { inherit inputs; };
           modules = [
-            ./system/hosts/book.nix
-            ./system/users/oz.nix
+            ./hosts/book
+            ./shared
             stylix.nixosModules.stylix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.extraSpecialArgs = { inherit inputs pkgs; };
-              home-manager.users.oz.imports = [
-                ./home/oz.nix
-              ];
-            }
+          ];
+        };
+        ozpc = lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/ozpc
+            ./shared
+            stylix.nixosModules.stylix
           ];
         };
         think = lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs pkgs ags stylix; };
+          specialArgs = { inherit inputs; };
           modules = [
-            ./system/hosts/think.nix
-            ./system/users/oz.nix
+            ./hosts/think
+            ./shared
             stylix.nixosModules.stylix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.extraSpecialArgs = { inherit inputs pkgs; };
-              home-manager.users.oz.imports = [
-                ./home/oz.nix
-              ];
-            }
           ];
         };
       };
