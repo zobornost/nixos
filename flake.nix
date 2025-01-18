@@ -48,6 +48,15 @@
             stylix.nixosModules.stylix
           ];
         };
+        box = lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/box
+            ./shared
+            stylix.nixosModules.stylix
+          ];
+        };
         ozpc = lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs; };
