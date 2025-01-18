@@ -10,5 +10,6 @@
     ./secrets.nix
     ./swapDevices.nix
     ./system.nix
+    ../../shared
   ];
 }
