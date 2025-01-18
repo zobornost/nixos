@@ -53,8 +53,6 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/box
-            ./shared
-            stylix.nixosModules.stylix
           ];
         };
         ozpc = lib.nixosSystem {
