@@ -13,5 +13,5 @@
       enable = true;
       theme = "breeze";
     };
-  }
+  };
 }
