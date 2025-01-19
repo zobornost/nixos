@@ -1,10 +1,10 @@
 { lib, pkgs, ... }:
 {
   hardware = {
-    enableRedistributableFirmware = lib.mkDefault true;
+    enableRedistributableFirmware = true;
     graphics.extraPackages = [
       pkgs.vpl-gpu-rt
     ];
-    cpu.intel.updateMicrocode = lib.mkDefault true;
+    cpu.intel.updateMicrocode = true;
   };
 }

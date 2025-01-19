@@ -1,6 +1,8 @@
 { lib, ... }:
 {
   programs = {
+    _1password.enable = true;
+    _1password-gui.enable = true;
     chromium.enable = true;
     direnv.enable = true;
     firefox.enable = true;

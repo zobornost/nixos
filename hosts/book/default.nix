@@ -7,5 +7,6 @@
     ./networking.nix
     ./swapDevices.nix
     ./system.nix
+    ../../shared
   ];
 }

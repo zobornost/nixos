@@ -30,6 +30,7 @@
       pkgs.inkscape
       pkgs.ironbar
       pkgs.jdk
+      pkgs.jetbrains.idea-community
       pkgs.kdePackages.karousel
       pkgs.kdePackages.krohnkite
       pkgs.lazygit
@@ -41,17 +42,21 @@
       pkgs.nodejs_22
       pkgs.nuclear
       pkgs.nvd
+      pkgs.nwg-panel
       pkgs.packwiz
       pkgs.pam_u2f
       pkgs.pavucontrol
       pkgs.pika-backup
       pkgs.prismlauncher
       pkgs.ripgrep
+      pkgs.rofi-wayland
       pkgs.scribus
       pkgs.shellcheck
+      pkgs.swaylock
       pkgs.swig
       pkgs.terraform
       pkgs.vim
+      pkgs.vlc
       pkgs.vscode
       pkgs.waybar
       pkgs.xwayland-satellite
