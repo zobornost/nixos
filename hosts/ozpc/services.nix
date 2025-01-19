@@ -1,0 +1,8 @@
+{ ... }:
+{
+  services = {
+    xserver = {
+      videoDrivers = [ "nvidia" ];
+    };
+  };
+}
