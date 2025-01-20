@@ -2,7 +2,10 @@
 {
   services = {
     desktopManager.plasma6.enable = true;
-    displayManager.defaultSession = "niri";
+    displayManager = {
+      defaultSession = "niri";
+      sddm.enable = true;
+    };
     flatpak.enable = true;
     fprintd.enable = true;
     openssh.enable = true;
