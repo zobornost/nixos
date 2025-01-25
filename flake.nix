@@ -15,10 +15,6 @@
       url = "git+ssh://git@github.com/ozmodeuz/sops.git?shallow=1&ref=main";
       flake = false;
     };
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";

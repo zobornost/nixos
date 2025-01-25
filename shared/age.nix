@@ -1,3 +1,3 @@
 {
-  age.secrets.cloudflare.file = ../secrets/cloudflare.json;
+  age.secrets.cloudflared.file = ../secrets/cloudflared.json;
 }
