@@ -4,8 +4,10 @@
       sshAgentAuth.enable = true;
       u2f = {
         enable = true;
-        cue = true;
-        #debug = true;
+        settings = {
+          cue = true;
+          #debug = true;
+        };
       };
       services = {
         login = {

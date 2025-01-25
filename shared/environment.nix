@@ -14,6 +14,7 @@
       pkgs.bc
       pkgs.bitwarden-desktop
       pkgs.btop
+      pkgs.cf-terraforming
       pkgs.coreutils
       pkgs.curl
       pkgs.devenv
@@ -53,6 +54,7 @@
       pkgs.shellcheck
       pkgs.swaylock
       pkgs.swig
+      pkgs.terraform
       pkgs.vim
       pkgs.vlc
       pkgs.vscode

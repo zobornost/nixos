@@ -1,7 +1,7 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 {
   hardware = {
-    cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    cpu.intel.updateMicrocode = true;
     enableRedistributableFirmware = true;
     fancontrol = {
       enable = true;
@@ -19,18 +19,18 @@
         AVERAGE=3
       '';
     };
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+      extraPackages = with pkgs; [ vaapiVdpau nvidia-vaapi-driver ];
+    };
     nvidia = {
       modesetting.enable = true;
-      powerManagement.enable = false;
+      powerManagement.enable = true;
       powerManagement.finegrained = false;
       open = false;
       nvidiaSettings = true;
       package = config.boot.kernelPackages.nvidiaPackages.beta;
-    };
-    opengl = {
-      enable = true;
-      driSupport32Bit = true;
-      extraPackages = with pkgs;[ vaapiVdpau nvidia-vaapi-driver ];
     };
   };
 }

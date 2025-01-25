@@ -3,7 +3,7 @@
   services = {
     desktopManager.plasma6.enable = true;
     displayManager = {
-      defaultSession = "plasma";
+      defaultSession = "niri";
       sddm.enable = true;
     };
     flatpak.enable = true;

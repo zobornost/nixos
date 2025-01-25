@@ -8,6 +8,7 @@
     ./minecraft.nix
     ./networking.nix
     ./secrets.nix
+    ./services.nix
     ./swapDevices.nix
     ./system.nix
     ../../shared
