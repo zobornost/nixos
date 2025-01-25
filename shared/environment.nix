@@ -1,7 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   environment = {
     sessionVariables = {
+      EDITOR = "micro";
       NIXOS_OZONE_WL = "1";
       WLR_NO_HARDWARE_CURSORS = "1";
     };
@@ -9,6 +10,7 @@
       pkgs._1password-cli
       pkgs._1password-gui
       pkgs.adwaita-qt
+      inputs.agenix.packages.${pkgs.system}.default
       pkgs.alacritty
       pkgs.apostrophe
       pkgs.bc
@@ -37,7 +39,7 @@
       pkgs.libgnome-keyring
       pkgs.micro
       pkgs.nix-index
-      pkgs.nixpkgs-fmt
+      pkgs.nixfmt-rfc-style
       pkgs.nixos-icons
       pkgs.nodejs_22
       pkgs.nuclear
@@ -52,6 +54,7 @@
       pkgs.rofi-wayland
       pkgs.scribus
       pkgs.shellcheck
+      pkgs.sops
       pkgs.swaylock
       pkgs.swig
       pkgs.terraform

@@ -1,6 +1,7 @@
 { lib, ... }:
 {
   imports = [
+    ./age.nix
     ./boot.nix
     ./console.nix
     ./environment.nix

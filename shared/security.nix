@@ -12,7 +12,6 @@
       services = {
         login = {
           kwallet.enable = true;
-          u2fAuth = true;
           enableGnomeKeyring = true;
         };
         sudo = {

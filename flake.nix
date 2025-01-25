@@ -1,5 +1,6 @@
 {
   inputs = {
+    agenix.url = "github:ryantm/agenix";
     lix = {
       url = "https://git.lix.systems/lix-project/lix/archive/main.tar.gz";
       flake = false;
@@ -23,7 +24,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, lix, lix-module, nixpkgs, secrets, sops-nix, stylix, ... }@inputs:
+  outputs = { self, agenix, lix, lix-module, nixpkgs, secrets, sops-nix, stylix, ... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -61,6 +62,7 @@
           modules = [
             ./hosts/ozpc
             ./shared
+            agenix.nixosModules.default
             stylix.nixosModules.stylix
           ];
         };
