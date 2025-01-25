@@ -2,7 +2,10 @@
 {
   services = {
     desktopManager.plasma6.enable = true;
-    displayManager.defaultSession = "niri";
+    displayManager = {
+      defaultSession = "plasma";
+      sddm.enable = true;
+    };
     flatpak.enable = true;
     fprintd.enable = true;
     openssh.enable = true;
@@ -16,9 +19,6 @@
     udev.packages = [ pkgs.yubikey-personalization ];
     xserver = {
       enable = true;
-      displayManager = {
-        sddm.enable = true;
-      };
       xkb = {
         layout = "gb";
       };
