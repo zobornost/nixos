@@ -2,7 +2,10 @@
 {
   programs = {
     _1password.enable = true;
-    _1password-gui.enable = true;
+    _1password-gui = {
+      enable = true;
+      polkitPolicyOwners = ["oz"];
+    };
     chromium.enable = true;
     direnv.enable = true;
     firefox.enable = true;
