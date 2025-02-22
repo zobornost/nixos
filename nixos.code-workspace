@@ -1,17 +1,20 @@
 {
   "folders": [
-	{
-		"path": "."
-	},
-	{
-		"path": "../../.sops/.git"
-	},
-	{
-		"path": "../../.sops"
-	},
-	{
-		"path": "../sops"
-	}
-],
+    {
+      "path": "."
+    },
+    {
+      "path": "../../.sops/.git"
+    },
+    {
+      "path": "../../.sops"
+    },
+    {
+      "path": "../sops"
+    },
+    {
+      "path": "../home-manager"
+    }
+  ],
   "settings": {}
 }
