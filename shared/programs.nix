@@ -11,6 +11,7 @@
       enableSSHSupport = true;
     };
     niri.enable = true;
+    nix-ld.enable = true;
     virt-manager.enable = true;
     xwayland.enable = lib.mkForce true;
   };
