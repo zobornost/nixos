@@ -5,6 +5,7 @@
     ./cloudflared.nix
     ./filesystems.nix
     ./hardware.nix
+    ./mcman.nix
     ./minecraft.nix
     ./networking.nix
     ./services.nix

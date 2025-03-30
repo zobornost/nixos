@@ -1,4 +1,8 @@
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  inputs,
+  ...
+}:
 {
   environment = {
     sessionVariables = {
@@ -19,6 +23,8 @@
       pkgs.cf-terraforming
       pkgs.coreutils
       pkgs.curl
+      inputs.deskflow_1_20.legacyPackages.${pkgs.system}.deskflow
+      pkgs.devbox
       pkgs.devenv
       pkgs.discord
       pkgs.emacs
@@ -64,6 +70,7 @@
       pkgs.waybar
       pkgs.xwayland-satellite
       pkgs.yaru-theme
+      pkgs.yubikey-manager
       pkgs.yubioath-flutter
     ];
   };
