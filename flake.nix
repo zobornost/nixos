@@ -47,16 +47,7 @@
             ./hosts/book
             ./shared
             agenix.nixosModules.default
-            agenix.nixosModules.default
-          ];
-        };
-
-        box = lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./hosts/box
-            agenix.nixosModules.default
+            lix-module.nixosModules.default
           ];
         };
 
