@@ -1,5 +1,5 @@
 {
   services = {
-    fprintd.enable = true;
+    fprintd.enable = false;
   }
 }

@@ -1,6 +1,7 @@
-{ ... }:
+{ config, ... }:
 {
   boot = {
+    #extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
     initrd = {
       availableKernelModules = [
         "vmd"
@@ -11,6 +12,10 @@
         "usb_storage"
         "uas"
         "sd_mod"
+        "nvidia"
+        "nvidia_modeset"
+        "nvidia_drm"
+        "nvidia_uvm"
       ];
     };
     kernelModules = [
@@ -23,6 +28,9 @@
       "splash"
       "boot.shell_on_fail"
       "usbcore.autosuspend=-1"
+      "nvidia-drm.fbdev=1"
+      "nvidia-drm.modeset=1"
+      "fbcon=map:1"
     ];
   };
 }

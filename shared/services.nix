@@ -3,8 +3,8 @@
   services = {
     desktopManager.plasma6.enable = true;
     displayManager = {
+      #sddm.enable = true;
       defaultSession = "plasma";
-      sddm.enable = true;
     };
     flatpak.enable = true;
     openssh.enable = true;
@@ -18,6 +18,19 @@
     udev.packages = [ pkgs.yubikey-personalization ];
     xserver = {
       enable = true;
+      desktopManager = {
+        #budgie.enable = true;
+        #cinnamon.enable = true;
+        #deepin.enable = true;
+        #enlightenment.enable = true;
+        #gnome.enable = true;
+        #mate.enable = true;
+        #pantheon.enable = true;
+      };
+      displayManager.gdm = {
+        enable = true;
+        autoSuspend = false;
+      };
       xkb = {
         layout = "gb";
       };
