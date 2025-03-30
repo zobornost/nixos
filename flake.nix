@@ -42,7 +42,7 @@
           modules = [
             ./hosts/book
             ./shared
-            stylix.nixosModules.stylix
+            agenix.nixosModules.default
           ];
         };
         box = lib.nixosSystem {
@@ -59,7 +59,6 @@
             ./hosts/ozpc
             ./shared
             agenix.nixosModules.default
-            stylix.nixosModules.stylix
           ];
         };
         think = lib.nixosSystem {
@@ -68,7 +67,6 @@
           modules = [
             ./hosts/think
             ./shared
-            stylix.nixosModules.stylix
           ];
         };
       };

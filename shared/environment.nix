@@ -28,6 +28,7 @@
       pkgs.ghostty
       pkgs.google-chrome
       pkgs.gparted
+      pkgs.home-manager
       pkgs.hyfetch
       pkgs.inkscape
       pkgs.ironbar
