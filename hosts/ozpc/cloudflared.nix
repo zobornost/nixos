@@ -1,7 +1,10 @@
-{ config, lib, pkgs, ... }:
-
-
-  let
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+let
   cloudflared-bin = pkgs.stdenv.mkDerivation rec {
     pname = "cloudflared-bin";
     version = "2025.4.0";
@@ -9,7 +12,11 @@
       url = "https://github.com/cloudflare/cloudflared/releases/download/${version}/cloudflared-linux-amd64";
       sha256 = "df13e7e0a027f648c410b5cc701fbcff028724d0e93209796cdbb79ec38695d4";
     };
-    nativeBuildInputs = [ pkgs.autoPatchelfHook pkgs.patchelf pkgs.binutils ];
+    nativeBuildInputs = [
+      pkgs.autoPatchelfHook
+      pkgs.patchelf
+      pkgs.binutils
+    ];
     dontUnpack = true;
     installPhase = ''
       mkdir -p $out/bin
@@ -35,5 +42,5 @@ in
         };
       };
     };
-  };  
+  };
 }
