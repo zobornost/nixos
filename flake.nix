@@ -1,9 +1,6 @@
 {
   inputs = {
     agenix.url = "github:ryantm/agenix";
-    deskflow_1_20 = {
-      url = "github:NixOS/nixpkgs?ref=2c006c265e95a5814ea5be51498a3d9d4e7eb05f";
-    };
     lix = {
       url = "https://git.lix.systems/lix-project/lix/archive/main.tar.gz";
       flake = false;
@@ -29,7 +26,6 @@
       self,
       nixpkgs,
       agenix,
-      deskflow_1_20,
       lix-module,
       ...
     }:
@@ -46,15 +42,6 @@
           modules = [
             ./hosts/book
             ./shared
-            agenix.nixosModules.default
-          ];
-        };
-
-        box = lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./hosts/box
             agenix.nixosModules.default
           ];
         };

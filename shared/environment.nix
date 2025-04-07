@@ -23,7 +23,7 @@
       pkgs.cf-terraforming
       pkgs.coreutils
       pkgs.curl
-      inputs.deskflow_1_20.legacyPackages.${pkgs.system}.deskflow
+      pkgs.deskflow
       pkgs.devbox
       pkgs.devenv
       pkgs.discord
@@ -34,6 +34,7 @@
       pkgs.ghostty
       pkgs.google-chrome
       pkgs.gparted
+      pkgs.home-manager
       pkgs.hyfetch
       pkgs.inkscape
       pkgs.ironbar
@@ -45,7 +46,7 @@
       pkgs.libgnome-keyring
       pkgs.micro
       pkgs.nix-index
-      pkgs.nixfmt-rfc-style
+      pkgs.nixfmt
       pkgs.nixos-icons
       pkgs.nodejs_22
       pkgs.nuclear
