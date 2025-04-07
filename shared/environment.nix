@@ -23,7 +23,7 @@
       pkgs.cf-terraforming
       pkgs.coreutils
       pkgs.curl
-      inputs.deskflow_1_20.legacyPackages.${pkgs.system}.deskflow
+      pkgs.deskflow
       pkgs.devbox
       pkgs.devenv
       pkgs.discord
