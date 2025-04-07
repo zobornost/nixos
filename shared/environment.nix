@@ -46,7 +46,7 @@
       pkgs.libgnome-keyring
       pkgs.micro
       pkgs.nix-index
-      pkgs.nixfmt
+      pkgs.nixfmt-rfc-style
       pkgs.nixos-icons
       pkgs.nodejs_22
       pkgs.nuclear
