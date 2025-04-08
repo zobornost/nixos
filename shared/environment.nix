@@ -1,9 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}:
-{
+{ pkgs, inputs, ... }: {
   environment = {
     sessionVariables = {
       EDITOR = "micro";
@@ -23,7 +18,7 @@
       pkgs.cf-terraforming
       pkgs.coreutils
       pkgs.curl
-      pkgs.deskflow
+      #pkgs.deskflow
       pkgs.devbox
       pkgs.devenv
       pkgs.discord
