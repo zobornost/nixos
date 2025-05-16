@@ -6,29 +6,15 @@
       WLR_NO_HARDWARE_CURSORS = "1";
     };
     systemPackages = with pkgs; [
-      _1password-cli
-      _1password-gui
       adwaita-qt
       inputs.agenix.packages.${system}.default
-      alacritty
-      apostrophe
       bc
-      bitwarden-desktop
       btop
-      cf-terraforming
       codex
       coreutils
       curl
-      #deskflow
-      devbox
-      devenv
-      discord
-      eyedropper
       fd
       fuzzel
-      gedit
-      ghostty
-      gnome-builder
       gnome-extension-manager
       gnome-tweaks
       gnomeExtensions.appindicator
@@ -37,16 +23,11 @@
       gnomeExtensions.focus
       gnomeExtensions.paperwm
       gnomeExtensions.rounded-corners
+      gnomeExtensions.rounded-window-corners-reborn
       gnomeExtensions.tailscale-qs
       gnomeExtensions.user-themes-x
-      google-chrome
       gparted
       home-manager
-      hyfetch
-      inkscape
-      ironbar
-      jdk
-      jetbrains.idea-community
       kdePackages.kaccounts-integration
       kdePackages.kaccounts-providers
       kdePackages.karousel
@@ -57,37 +38,23 @@
       kdePackages.signond
       lazygit
       libgnome-keyring
-      logseq
       micro
       nix-index
       nixfmt-rfc-style
       nixos-icons
       nodejs_22
-      nuclear
       nvd
-      nwg-panel
       packwiz
       pam_u2f
       pavucontrol
-      pika-backup
-      prismlauncher
       ripgrep
-      rofi-wayland
-      scribus
       shellcheck
       sops
-      swaylock
       swig
-      terraform
       vim
-      vlc
-      vscode
-      waybar
-      windsurf
       yaru-theme
       yubikey-manager
       yubioath-flutter
-      zettlr
     ];
   };
 }
