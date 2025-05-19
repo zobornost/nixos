@@ -6,7 +6,7 @@
     ./filesystems.nix
     ./hardware.nix
     ./mcman.nix
-    ./minecraft.nix
+    #./minecraft.nix
     ./networking.nix
     ./services.nix
     ./swapDevices.nix
