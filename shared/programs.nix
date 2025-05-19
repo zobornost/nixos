@@ -6,7 +6,6 @@
       enable = true;
       polkitPolicyOwners = ["oz"];
     };
-    chromium.enable = true;
     direnv.enable = true;
     firefox.enable = true;
     gnupg.agent = {
