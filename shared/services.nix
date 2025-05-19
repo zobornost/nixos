@@ -1,11 +1,11 @@
 { pkgs, ... }:
 {
   services = {
-    desktopManager.plasma6.enable = true;
-    displayManager = {
-      #sddm.enable = true;
-      defaultSession = "plasma";
-    };
+    # desktopManager.plasma6.enable = true;
+    # displayManager = {
+    #   #sddm.enable = true;
+    #   defaultSession = "plasma";
+    # };
     flatpak.enable = true;
     openssh.enable = true;
     pcscd.enable = true;
@@ -23,7 +23,7 @@
         #cinnamon.enable = true;
         #deepin.enable = true;
         #enlightenment.enable = true;
-        #gnome.enable = true;
+        gnome.enable = true;
         #mate.enable = true;
         #pantheon.enable = true;
       };

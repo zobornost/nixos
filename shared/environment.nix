@@ -1,33 +1,58 @@
 { pkgs, inputs, ... }:
 {
   environment = {
+    sessionVariables = {
+      EDITOR = "micro";
+      NIXOS_OZONE_WL = "1";
+      WLR_NO_HARDWARE_CURSORS = "1";
+    };
     systemPackages = with pkgs; [
       adwaita-qt
-      inputs.agenix.packages.${pkgs.system}.default
+      inputs.agenix.packages.${system}.default
       bc
       btop
+      codex
       coreutils
       curl
       fd
+      fuzzel
+      gnome-extension-manager
+      gnome-tweaks
+      gnomeExtensions.appindicator
+      gnomeExtensions.arcmenu
+      gnomeExtensions.dash-to-panel
+      gnomeExtensions.focus
+      gnomeExtensions.paperwm
+      gnomeExtensions.rounded-corners
+      gnomeExtensions.rounded-window-corners-reborn
+      gnomeExtensions.tailscale-qs
+      gnomeExtensions.user-themes-x
       gparted
       home-manager
+      kdePackages.kaccounts-integration
+      kdePackages.kaccounts-providers
       kdePackages.karousel
+      kdePackages.kdepim-addons
+      kdePackages.kio-gdrive
       kdePackages.krohnkite
+      kdePackages.signon-kwallet-extension
+      kdePackages.signond
       lazygit
       libgnome-keyring
       micro
       nix-index
       nixfmt-rfc-style
       nixos-icons
+      nodejs_22
       nvd
       packwiz
       pam_u2f
       pavucontrol
-      pika-backup
       ripgrep
       shellcheck
       sops
-      xwayland-satellite
+      swig
+      vim
       yaru-theme
       yubikey-manager
       yubioath-flutter

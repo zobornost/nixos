@@ -32,7 +32,6 @@
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;
-
     in
     {
       nixosConfigurations = {
@@ -56,6 +55,17 @@
             lix-module.nixosModules.default
           ];
         };
+	
+	slab = lib.nixosSystem {
+	  inherit system;
+	  specialArgs = { inherit inputs; };
+	  modules = [
+	    ./hosts/slab
+	    ./shared
+	    agenix.nixosModules.default
+	    lix-module.nixosModules.default
+	  ];
+	};	
 
         think = lib.nixosSystem {
           inherit system;
