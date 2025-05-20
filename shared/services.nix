@@ -7,6 +7,9 @@
     #   defaultSession = "plasma";
     # };
     flatpak.enable = true;
+    gnome.gnome-remote-desktop = {
+      enable = true;
+    };
     openssh.enable = true;
     pcscd.enable = true;
     pipewire.audio.enable = true;
@@ -43,5 +46,8 @@
       };
     };
     yubikey-agent.enable = true;
+  };
+  systemd.services.gnome-remote-desktop = {
+      wantedBy = [ "graphical.target" ];
   };
 }
