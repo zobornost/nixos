@@ -23,7 +23,14 @@
         #cinnamon.enable = true;
         #deepin.enable = true;
         #enlightenment.enable = true;
-        gnome.enable = true;
+        gnome = {
+          enable = true;
+          extraGSettingsOverridePackages = [ pkgs.mutter ];
+          extraGSettingsOverrides = ''
+            [org.gnome.mutter]
+            experimental-features=['scale-monitor-framebuffer']
+          '';
+        };
         #mate.enable = true;
         #pantheon.enable = true;
       };
