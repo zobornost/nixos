@@ -27,6 +27,7 @@
       gnomeExtensions.rounded-window-corners-reborn
       gnomeExtensions.tailscale-qs
       gnomeExtensions.user-themes-x
+      gnomeExtensions.window-is-ready-remover
       gparted
       home-manager
       kdePackages.kaccounts-integration
