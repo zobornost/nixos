@@ -20,12 +20,17 @@
       gnome-tweaks
       gnomeExtensions.appindicator
       gnomeExtensions.arcmenu
+      gnomeExtensions.blur-my-shell
       gnomeExtensions.dash-to-panel
       gnomeExtensions.focus
+      gnomeExtensions.forge
+      gnomeExtensions.gsconnect
+      gnomeExtensions.just-perfection
       gnomeExtensions.paperwm
       gnomeExtensions.rounded-corners
       gnomeExtensions.rounded-window-corners-reborn
       gnomeExtensions.tailscale-qs
+      gnomeExtensions.tiling-shell
       gnomeExtensions.user-themes-x
       gnomeExtensions.window-is-ready-remover
       gparted
