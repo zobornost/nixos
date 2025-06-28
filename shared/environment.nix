@@ -35,14 +35,14 @@
       gnomeExtensions.window-is-ready-remover
       gparted
       home-manager
-      kdePackages.kaccounts-integration
-      kdePackages.kaccounts-providers
-      kdePackages.karousel
-      kdePackages.kdepim-addons
-      kdePackages.kio-gdrive
-      kdePackages.krohnkite
-      kdePackages.signon-kwallet-extension
-      kdePackages.signond
+      # kdePackages.kaccounts-integration
+      # kdePackages.kaccounts-providers
+      # kdePackages.karousel
+      # kdePackages.kdepim-addons
+      # kdePackages.kio-gdrive
+      # kdePackages.krohnkite
+      # kdePackages.signon-kwallet-extension
+      # kdePackages.signond
       lazygit
       libgnome-keyring
       micro

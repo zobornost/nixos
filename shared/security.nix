@@ -10,24 +10,31 @@
       services = {
         login = {
           enableGnomeKeyring = true;
-          kwallet.enable = true;
-          kwallet.forceRun = true;
-          # rules = {
-          #   auth = {
-          #     pam_u2f = {
-          #       enable = true;
-          #       control = "sufficient";
-          #       modulePath = "${pkgs.pam_u2f}/lib/security/pam_u2f.so";
-          #       order = config.security.pam.services.sudo.rules.auth.unix.order - 10;
-          #       settings = {
-          #         cue = true;
-          #         cue_prompt = "Touch!";
-          #         pinverification = 1;
-          #         userpresence = 1;
-          #       };
-          #     };
-          #   };
-          # };
+          rules = {
+            auth = {
+              pam_u2f = {
+                enable = true;
+                control = "sufficient";
+                modulePath = "${pkgs.pam_u2f}/lib/security/pam_u2f.so";
+                order = config.security.pam.services.sudo.rules.auth.unix.order - 10;
+                settings = {
+                  cue = true;
+                  cue_prompt = "Touch!";
+                  pinverification = 1;
+                  userpresence = 1;
+                };
+              };
+            };
+          };
+        };
+        gdm = {
+          enableGnomeKeyring = true;
+        };
+        gdm-password = {
+          enableGnomeKeyring = true;
+        };
+        gdm-fingerprint = {
+          enableGnomeKeyring = true;
         };
         sudo = {
           rules = {
