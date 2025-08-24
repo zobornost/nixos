@@ -1,24 +1,19 @@
 { pkgs, inputs, ... }:
 {
   environment = {
-    sessionVariables = {
-      EDITOR = "micro";
-      NIXOS_OZONE_WL = "1";
-      WLR_NO_HARDWARE_CURSORS = "1";
-    };
     systemPackages = with pkgs; [
       adwaita-qt
       inputs.agenix.packages.${system}.default
       bc
-      btop
-      codex
+      # btop          # moved to HM
+      # codex         # moved to HM
       coreutils
-      curl
-      fd
-      fuzzel
-      gnome-extension-manager
+      # curl          # moved to HM
+      # fd            # moved to HM
+      # fuzzel        # moved to HM
+      # gnome-extension-manager  # moved to HM
       gnome-remote-desktop
-      gnome-tweaks
+      # gnome-tweaks  # moved to HM
       gnomeExtensions.appindicator
       gnomeExtensions.arcmenu
       gnomeExtensions.blur-my-shell
@@ -34,8 +29,8 @@
       gnomeExtensions.tiling-shell
       gnomeExtensions.user-themes-x
       gnomeExtensions.window-is-ready-remover
-      gparted
-      home-manager
+      # gparted       # moved to HM
+      # home-manager  # optional; removed from system
       # kdePackages.kaccounts-integration
       # kdePackages.kaccounts-providers
       # kdePackages.karousel
@@ -44,25 +39,25 @@
       # kdePackages.krohnkite
       # kdePackages.signon-kwallet-extension
       # kdePackages.signond
-      lazygit
+      # lazygit       # moved to HM
       libgnome-keyring
-      micro
-      nix-index
-      nixfmt-rfc-style
+      # micro         # moved to HM
+      # nix-index     # moved to HM
+      # nixfmt-rfc-style # moved to HM
       nixos-icons
-      nodejs_22
-      nvd
+      # nodejs_22     # moved to HM
+      # nvd           # moved to HM
       packwiz
       pam_u2f
-      pavucontrol
-      ripgrep
+      # pavucontrol   # moved to HM
+      # ripgrep       # moved to HM
       shellcheck
       sops
       swig
-      vim
-      yaru-theme
-      yubikey-manager
-      yubioath-flutter
+      # vim           # moved to HM
+      # yaru-theme    # moved to HM
+      # yubikey-manager     # moved to HM
+      # yubioath-flutter    # moved to HM
     ];
   };
 }
