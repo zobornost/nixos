@@ -6,14 +6,16 @@
       gnome-keyring = {
         enable = true;
       };
-      gnome-remote-desktop = {
-        enable = true;
-      };
+      gnome-remote-desktop.enable = true;
     };
     openssh.enable = true;
     pcscd.enable = true;
-    pipewire.audio.enable = true;
-    pipewire.wireplumber.enable = true;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      pulse.enable = true;
+      wireplumber.enable = true;
+    };
     tailscale = {
       enable = true;
       extraUpFlags = [ "--operator=oz" ];
@@ -40,6 +42,7 @@
       displayManager.gdm = {
         enable = true;
         autoSuspend = false;
+        wayland = true;
       };
       xkb = {
         layout = "gb";
@@ -47,7 +50,6 @@
     };
     yubikey-agent.enable = true;
   };
-  systemd.services.gnome-remote-desktop = {
-    wantedBy = [ "graphical.target" ];
-  };
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = with pkgs; [ xdg-desktop-portal-gnome ];
 }

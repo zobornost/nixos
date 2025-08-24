@@ -8,22 +8,21 @@
         driver = pkgs.libfprint-2-tod1-goodix-550a;
       };
     };
+    fwupd.enable = true;
+    hardware.bolt.enable = true;
     xserver = {
       enable = true;
-      displayManager.gdm.enable = true;
+      displayManager.gdm = {
+        enable = true;
+        wayland = true;
+      };
       desktopManager.gnome.enable = true;
+      videoDrivers = [ "nvidia" ];
       xkb = {
         layout = "gb";
         variant = "";
       };
     };
-    pipewire = {
-      enable = true;
-      alsa.enable = false;
-      alsa.support32Bit = false;
-      pulse.enable = true;
-      jack.enable = false;
-      wireplumber.enable = true;
-    };
-  };  
+    gnome.gnome-keyring.enable = true;
+  };
 }

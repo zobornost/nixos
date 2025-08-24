@@ -17,6 +17,7 @@
       fd
       fuzzel
       gnome-extension-manager
+      gnome-remote-desktop
       gnome-tweaks
       gnomeExtensions.appindicator
       gnomeExtensions.arcmenu

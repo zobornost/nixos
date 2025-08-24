@@ -1,9 +1,12 @@
+{ lib, config, ... }:
 {
-  age.secrets.cloudflared = {
-    file = ../secrets/cloudflared.json;
-    mode = "0400";
-    owner = "cloudflared";
-    group = "cloudflared";
-    path = "/etc/cloudflared/credentials.json";
+  age.secrets = lib.mkIf config.services.cloudflared.enable {
+    cloudflared = {
+      file = ../secrets/cloudflared.json;
+      mode = "0400";
+      owner = "cloudflared";
+      group = "cloudflared";
+      path = "/etc/cloudflared/credentials.json";
+    };
   };
 }
